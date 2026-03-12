@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Project page for Portals: Persistent, Editable 4D Spatial World Models on Edge Devices.">
+  <meta property="og:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
+  <meta property="og:description" content="CVPR 2026 4D World Models workshop paper on deployed, persistent, editable 4D worlds for edge devices.">
+  <meta property="og:url" content="https://imclab.github.io/portals-cvpr2026/">
+  <meta property="og:image" content="static/images/portals-banner.png">
+  <meta property="og:image:width" content="1414">
+  <meta property="og:image:height" content="760">
+  <meta name="twitter:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
+  <meta name="twitter:description" content="CVPR 2026 workshop paper on deployed persistent 4D spatial worlds.">
+  <meta name="twitter:image" content="static/images/portals-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="4D world models, Gaussian splatting, augmented reality, edge devices, persistent spatial computing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portals: Persistent, Editable 4D Spatial World Models on Edge Devices</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Portals: Persistent, Editable 4D Spatial World Models on Edge Devices</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">James A. Tunick<sup>1,2</sup>,</span>
+              <span class="author-block">Ryan Brant<sup>1</sup>,</span>
+              <span class="author-block">Jacob D. Pennock<sup>1</sup>,</span>
+              <span class="author-block">Justin Kasowski<sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>H3M, Inc.</span>
+              <span class="author-block"><sup>2</sup>The IMC Lab, New York</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">CVPR 2026 Workshop on 4D World Models: Bridging Generation and Reconstruction</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="mailto:JTunick@TheIMCLab.com" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <span>Contact</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Web Demo Coming Soon</span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code Coming Soon</span>
+                  </span>
+                </span>
+                <span class="link-block">
+                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                    <span class="icon"><i class="fas fa-video"></i></span>
+                    <span>Video Coming Soon</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/portals-banner.png" alt="Portals system architecture overview" class="teaser-image">
+        <h2 class="subtitle has-text-centered">
+          Deployed 4D spatial worlds for phones, smart glasses, and mixed-reality headsets with persistence, editability, and edge-device rendering constraints as first-class requirements.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting, 4D-GS, and Generalizable Human Gaussians, Portals has been deployed across mobile AR, Apple Vision Pro, and web clients.
+            </p>
+            <p>
+              We contribute an edge-device runtime built around LOD-adaptive Gaussian Splatting and a shared spatial-media compute substrate, a persistent geospatial scene-state architecture for reloadable and anchor-guided world alignment, a creator-facing composition pipeline spanning reconstruction and generation, and benchmark axes for 4D world models under deployment constraints such as mobile rendering efficiency, scene persistence, and editable world state.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Paper Figures</h2>
+          <div class="content has-text-centered">
+            <img src="static/images/content-pipeline.png" alt="Portals content pipeline from the paper" class="paper-figure">
+            <p class="figure-caption">Figure from the paper showing the Portals content pipeline across capture, reconstruction, editing, and deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Status</h2>
+          <div class="content has-text-centered">
+            <p>The paper PDF is live now. Code and video artifacts will be added after workshop release timing is finalized.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" target="_blank">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page reuses the same academic project-page template family used across workshop speaker sites, adapted from the Nerfies/Bulma project page pattern.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
