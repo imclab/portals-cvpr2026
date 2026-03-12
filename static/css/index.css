@@ -124,10 +124,31 @@ body {
   align-items: start;
 }
 
+.visual-highlights {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.visual-hero {
+  margin: 0;
+}
+
+.visual-hero .paper-figure {
+  padding: 0.65rem;
+}
+
+.visual-grid-secondary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .visual-card {
   margin: 0;
 }
 
+.visual-card .paper-figure {
+  height: 100%;
+  object-fit: cover;
+}
 .figure-stack {
   margin-top: 2rem;
 }
@@ -140,4 +161,10 @@ body {
 
 .content p {
   font-size: 1.02rem;
+}
+
+@media screen and (max-width: 900px) {
+  .visual-grid-secondary {
+    grid-template-columns: 1fr;
+  }
 }
