@@ -95,6 +95,43 @@ body {
   color: #666;
 }
 
+.project-meta-links,
+.footer-links {
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  color: #5c6670;
+}
+
+.project-meta-links a,
+.footer-links a {
+  color: #1f5fbf;
+}
+
+.project-meta-links a:hover,
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.meta-divider {
+  margin: 0 0.45rem;
+  color: #9aa3ab;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.visual-card {
+  margin: 0;
+}
+
+.figure-stack {
+  margin-top: 2rem;
+}
+
 .is-disabled {
   opacity: 0.72;
   cursor: default;
