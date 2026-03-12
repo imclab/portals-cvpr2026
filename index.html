@@ -82,6 +82,15 @@
                   </span>
                 </span>
               </div>
+              <div class="project-meta-links">
+                <a href="https://h3m.ai" target="_blank" rel="noopener noreferrer">H3M.ai</a>
+                <span class="meta-divider">•</span>
+                <a href="https://www.theimclab.com" target="_blank" rel="noopener noreferrer">The IMC Lab</a>
+                <span class="meta-divider">•</span>
+                <a href="https://github.com/imclab" target="_blank" rel="noopener noreferrer">imclab GitHub</a>
+                <span class="meta-divider">•</span>
+                <a href="https://github.com/JT5D" target="_blank" rel="noopener noreferrer">JT5D GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -94,7 +103,7 @@
       <div class="hero-body">
         <img src="static/images/portals-banner.png" alt="Portals system architecture overview" class="teaser-image">
         <h2 class="subtitle has-text-centered">
-          Deployed 4D spatial worlds for phones, smart glasses, and mixed-reality headsets with persistence, editability, and edge-device rendering constraints as first-class requirements.
+          Persistent, editable 4D spatial world models for phones, smart glasses, and mixed-reality headsets, built with edge-device rendering constraints as a first-class requirement.
         </h2>
       </div>
     </div>
@@ -107,11 +116,40 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting, 4D-GS, and Generalizable Human Gaussians, Portals has been deployed across mobile AR, Apple Vision Pro, and web clients.
+              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting, 4D-GS, and Generalizable Human Gaussians, Portals has been deployed across mobile AR, Apple Vision Pro, and web clients for reconstructed environments, volumetric humans, and holographic spatial media. We contribute: (1) an edge-device runtime built around LOD-adaptive Gaussian Splatting and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels through a single dispatch, driving 370+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro (2.7-4.1x speedup); (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions, and no-code authoring; and (4) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, scene persistence, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
             </p>
-            <p>
-              We contribute an edge-device runtime built around LOD-adaptive Gaussian Splatting and a shared spatial-media compute substrate, a persistent geospatial scene-state architecture for reloadable and anchor-guided world alignment, a creator-facing composition pipeline spanning reconstruction and generation, and benchmark axes for 4D world models under deployment constraints such as mobile rendering efficiency, scene persistence, and editable world state.
-            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Visual Highlights</h2>
+          <div class="visual-grid">
+            <figure class="visual-card">
+              <img src="static/images/avp-imc-contact.jpg" alt="Portals deployments across mobile and immersive hardware" class="paper-figure">
+              <figcaption class="figure-caption">Representative deployment surfaces spanning mobile AR, spatial capture, and immersive display.</figcaption>
+            </figure>
+            <figure class="visual-card">
+              <img src="static/images/portals-ai-contact.jpg" alt="Portals AI-assisted spatial authoring workflow" class="paper-figure">
+              <figcaption class="figure-caption">AI-assisted spatial composition and scene control inside the shipped creator workflow.</figcaption>
+            </figure>
+            <figure class="visual-card">
+              <img src="static/images/runtime-real-app-grid-v3.jpg" alt="Real in-app runtime captures from Portals on iPhone" class="paper-figure">
+              <figcaption class="figure-caption">Real in-app runtime stills showing authoring, environment VFX, holograms, and responsive effects spanning body segmentation, gesture and hand input, audio-reactive behaviors, and face-driven overlays.</figcaption>
+            </figure>
+            <figure class="visual-card">
+              <img src="static/images/composer-contact.jpg" alt="Creator-authoring views from the Portals app" class="paper-figure">
+              <figcaption class="figure-caption">Creator-facing composition workflows designed for direct scene editing on device.</figcaption>
+            </figure>
+            <figure class="visual-card">
+              <img src="static/images/webgl-splat-contact.jpg" alt="Browser-based splat and web delivery view from Portals" class="paper-figure">
+              <figcaption class="figure-caption">Browser-facing WebGL and WebGPU delivery path for persistent spatial media on the web.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -124,8 +162,16 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Paper Figures</h2>
           <div class="content has-text-centered">
+            <img src="static/images/architecture.png" alt="Portals system architecture figure from the paper" class="paper-figure">
+            <p class="figure-caption">System architecture showing the persistent world stack, shared spatial-media substrate, and deployment surfaces across mobile, headset, and web clients.</p>
             <img src="static/images/content-pipeline.png" alt="Portals content pipeline from the paper" class="paper-figure">
-            <p class="figure-caption">Figure from the paper showing the Portals content pipeline across capture, reconstruction, editing, and deployment.</p>
+            <p class="figure-caption">Content pipeline across capture, reconstruction, editing, and deployment. In the shipped system, asset ingestion centers on phone capture, photogrammetry, and text or reference-image generation, while voice, direct manipulation, and no-code controls act as authoring surfaces over the same persistent scene graph.</p>
+            <img src="static/images/model-diagrams.png" alt="Portals model and representation diagrams from the paper" class="paper-figure figure-stack">
+            <p class="figure-caption">Model and representation diagrams summarizing how environments, volumetric humans, and spatial media fit into the same editable 4D world framework.</p>
+            <img src="static/images/lod-performance.png" alt="Portals level-of-detail and performance figure from the paper" class="paper-figure figure-stack">
+            <p class="figure-caption">Level-of-detail and performance figure highlighting mobile-first runtime constraints and the efficiency tradeoffs required for edge deployment.</p>
+            <img src="static/images/systems-comparison.png" alt="Systems comparison figure from the paper" class="paper-figure figure-stack">
+            <p class="figure-caption">Comparison of Portals against prior systems along persistence, editability, and deployment-relevant world-model axes.</p>
           </div>
         </div>
       </div>
@@ -138,7 +184,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Status</h2>
           <div class="content has-text-centered">
-            <p>The paper PDF is live now. Code and video artifacts will be added after workshop release timing is finalized.</p>
+            <p>The paper PDF linked here matches the final submission build. It documents a mobile-first Unity URP and VFX Graph runtime for persistent editable 4D worlds spanning reconstructed environments, volumetric humans, and holographic spatial media, with a WebGPU-first browser path for web delivery. The interactive web demo, code release, and video will be published after workshop timing is finalized.</p>
           </div>
         </div>
       </div>
@@ -157,6 +203,17 @@
           <div class="content">
             <p>
               This page reuses the same academic project-page template family used across workshop speaker sites, adapted from the Nerfies/Bulma project page pattern.
+            </p>
+            <p class="footer-links">
+              <a href="mailto:JTunick@TheIMCLab.com">JTunick@TheIMCLab.com</a>
+              <span class="meta-divider">•</span>
+              <a href="https://h3m.ai" target="_blank" rel="noopener noreferrer">H3M.ai</a>
+              <span class="meta-divider">•</span>
+              <a href="https://www.theimclab.com" target="_blank" rel="noopener noreferrer">The IMC Lab</a>
+              <span class="meta-divider">•</span>
+              <a href="https://github.com/imclab" target="_blank" rel="noopener noreferrer">imclab GitHub</a>
+              <span class="meta-divider">•</span>
+              <a href="https://github.com/JT5D" target="_blank" rel="noopener noreferrer">JT5D GitHub</a>
             </p>
           </div>
         </div>
