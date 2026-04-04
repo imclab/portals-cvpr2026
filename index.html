@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="description" content="Project page for Portals: Persistent, Editable 4D Spatial World Models on Edge Devices.">
   <meta property="og:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
-  <meta property="og:description" content="CVPR 2026 4D World Models workshop paper on deployed, persistent, editable 4D worlds for edge devices.">
+  <meta property="og:description" content="CVPR 2026 workshop paper on deployed, persistent, editable 4D spatial world models on mobile devices with adaptive rendering, voice-driven authoring, and 370+ VFX effects.">
   <meta property="og:url" content="https://imclab.github.io/portals-cvpr2026/">
   <meta property="og:image" content="static/images/portals-banner.png">
   <meta property="og:image:width" content="1414">
   <meta property="og:image:height" content="760">
   <meta name="twitter:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
-  <meta name="twitter:description" content="CVPR 2026 workshop paper on deployed persistent 4D spatial worlds.">
+  <meta name="twitter:description" content="CVPR 2026 workshop paper on deployed, persistent, editable 4D spatial world models on mobile devices.">
   <meta name="twitter:image" content="static/images/portals-banner.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="4D world models, Gaussian splatting, augmented reality, edge devices, persistent spatial computing">
@@ -103,7 +103,7 @@
       <div class="hero-body">
         <img src="static/images/portals-banner.png" alt="Portals system architecture overview" class="teaser-image">
         <h2 class="subtitle has-text-centered">
-          Persistent, editable 4D spatial world models for phones, smart glasses, and mixed-reality headsets, built with edge-device rendering constraints as a first-class requirement.
+          Persistent, editable 4D spatial world models for mobile devices, built with edge-device rendering constraints as a first-class requirement.
         </h2>
       </div>
     </div>
@@ -116,7 +116,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting, 4D-GS, and Generalizable Human Gaussians, Portals has been deployed across mobile AR, Apple Vision Pro, and web clients for reconstructed environments, volumetric humans, and holographic spatial media. We contribute: (1) an edge-device runtime built around LOD-adaptive Gaussian Splatting and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels through a single dispatch, driving 370+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro (2.7-4.1x speedup); (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions, and no-code authoring; and (4) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, scene persistence, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
+              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on mobile devices. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting, 4D-GS, and Generalizable Human Gaussians, Portals has been deployed on iOS with a web-based viewer for spatial content. We contribute: (1) an edge-device runtime with adaptive quality management and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels, driving 370+ source-agnostic VFX effects at interactive frame rates; (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions, and no-code authoring; (4) a three-layer intent architecture where 91% of voice commands resolve locally in &lt;1 ms via regex, with cloud LLM fallback for ambiguous requests and graceful degradation when offline; and (5) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, persistent scenes, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
             </p>
           </div>
         </div>
@@ -231,7 +231,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Status</h2>
           <div class="content has-text-centered">
-            <p>The paper PDF linked here matches the final submission build. It documents a mobile-first Unity URP and VFX Graph runtime for persistent editable 4D worlds spanning reconstructed environments, volumetric humans, and holographic spatial media, with a WebGPU-first browser path for web delivery. The interactive web demo, code release, and video will be published after workshop timing is finalized.</p>
+            <p>The paper PDF linked here is the camera-ready version (v5, April 2026). It documents a mobile-first Unity URP and VFX Graph runtime for persistent editable 4D worlds on iOS, with adaptive quality management, voice-driven scene authoring (91% local parse rate), and 370+ production VFX effects. The interactive web demo, code release, and video will be published after workshop timing is finalized.</p>
           </div>
         </div>
       </div>
