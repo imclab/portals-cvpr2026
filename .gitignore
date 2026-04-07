@@ -1,0 +1,73 @@
+# === SAFETY GITIGNORE — public GitHub Pages repo ===
+# Added 2026-04-07. Defense-in-depth: nothing sensitive should ever exist
+# in this directory, but if it does, this prevents accidental commit.
+
+# Secrets / credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.keystore
+credentials.json
+service-account*.json
+id_rsa*
+id_ed25519*
+*.secret
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.vscode/
+.idea/
+
+# Build / cache
+node_modules/
+.cache/
+dist/
+build/
+
+# Confidential project material (HARD RULE: never commit to any public repo)
+*CONFIDENTIAL*
+*PLAYBOOK*
+*SSOT*
+*STRATEGY*
+*_MA_*
+*M&A*
+provisional_prep/
+provisional_prep.zip
+*patent*
+*PROVISIONAL*
+*SECRET*
+*INTERNAL*
+
+# Draft paper sources (only compiled PDF belongs on the public page)
+*.tex
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+backups/
+_archive/
+
+# Reference dumps / business material
+ref/
+gdrive_assets/
+gtm_prep/
+background/
+helpers/
+
+# Session/agent artifacts
+.claude/
+.firecrawl/
+CLAUDE.md
+AGENTS.md
+MEMORY.md
+SESSION_*.md
+AUDIT_*.md
+CODEBASE_VERIFY_*.md
