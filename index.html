@@ -54,9 +54,9 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" download="Portals_CVPR2026_Workshop_Paper.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
+                    <span>Paper (PDF)</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -120,6 +120,23 @@
             <p>
               We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. The defining shift in spatial computing is not from 3D to 4D, but from stateless scenes to stateful worlds&mdash;scenes that persist, compound, and stay editable across sessions, devices, and users. Delivering such worlds on constrained hardware is the central systems problem: they must render in real time, survive revisits, and remain authorable through voice, gesture, and no-code tools. Built on 3D Gaussian Splatting and informed by 4D-GS and Generalizable Human Gaussians, Portals has been deployed on iOS, with web-based viewers (including Apple Vision Pro) for reconstructed environments, volumetric humans, and holographic spatial media. We contribute: (1) an edge-device runtime built around LOD-adaptive Gaussian splatting (SPAG) and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels, driving 360+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro (2.7&ndash;4.1&times; speedup); (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions (with on-device intent parsing and cloud fallback for ambiguous utterances), and no-code authoring; and (4) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, persistent scenes, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="supplemental-video" class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Supplemental Video</h2>
+          <div class="content has-text-centered">
+            <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+              <source src="static/videos/portals_cvpr2026_supp.mp4" type="video/mp4">
+              Your browser does not support HTML5 video. <a href="static/videos/portals_cvpr2026_supp.mp4">Download the video</a>.
+            </video>
+            <p class="figure-caption" style="margin-top:0.75rem;">Supplemental video accompanying the CVPR 2026 Workshop submission. Captured on device (iPhone 15 Pro, iPad Pro, Apple Vision Pro). <a href="static/videos/portals_cvpr2026_supp.mp4" download>Download MP4</a>.</p>
           </div>
         </div>
       </div>
@@ -205,23 +222,6 @@
     </div>
   </section>
 
-  <section id="supplemental-video" class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Supplemental Video</h2>
-          <div class="content has-text-centered">
-            <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
-              <source src="static/videos/portals_cvpr2026_supp.mp4" type="video/mp4">
-              Your browser does not support HTML5 video. <a href="static/videos/portals_cvpr2026_supp.mp4">Download the video</a>.
-            </video>
-            <p class="figure-caption" style="margin-top:0.75rem;">Supplemental video accompanying the CVPR 2026 Workshop submission. Captured on device (iPhone 15 Pro, iPad Pro, Apple Vision Pro). <a href="static/videos/portals_cvpr2026_supp.mp4" download>Download MP4</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -260,7 +260,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" target="_blank">
+        <a class="icon-link" href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" download="Portals_CVPR2026_Workshop_Paper.pdf">
           <i class="fas fa-file-pdf"></i>
         </a>
       </div>
