@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Project page for Portals: Persistent, Editable 4D Spatial World Models on Edge Devices.">
+  <meta name="description" content="Project page for Portals: Persistent, Editable 4D Spatial World Models on Edge Devices. CVPR 2026 Workshop on 4D World Models (Bridging Generation and Reconstruction). Accepted camera-ready paper, figures, and supplemental video.">
   <meta property="og:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
-  <meta property="og:description" content="CVPR 2026 workshop paper on deployed, persistent, editable 4D spatial world models on mobile devices with adaptive rendering, voice-driven authoring, and 370+ VFX effects.">
+  <meta property="og:description" content="CVPR 2026 Workshop paper (accepted). Deployed 4D spatial world models on iOS with LOD-adaptive Gaussian splatting, persistent geospatial scene state, voice-driven composition, and 360+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro.">
   <meta property="og:url" content="https://imclab.github.io/portals-cvpr2026/">
   <meta property="og:image" content="static/images/portals-banner.png">
   <meta property="og:image:width" content="1414">
   <meta property="og:image:height" content="760">
+  <meta property="og:video" content="static/videos/portals_cvpr2026_supp.mp4">
+  <meta property="og:video:type" content="video/mp4">
   <meta name="twitter:title" content="Portals: Persistent, Editable 4D Spatial World Models on Edge Devices">
-  <meta name="twitter:description" content="CVPR 2026 workshop paper on deployed, persistent, editable 4D spatial world models on mobile devices.">
+  <meta name="twitter:description" content="CVPR 2026 Workshop paper (accepted). Deployed 4D spatial world models on iOS with voice-driven composition and 360+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro.">
   <meta name="twitter:image" content="static/images/portals-banner.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="4D world models, Gaussian splatting, augmented reality, edge devices, persistent spatial computing">
@@ -76,10 +78,10 @@
                   </span>
                 </span>
                 <span class="link-block">
-                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                  <a href="#supplemental-video" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-video"></i></span>
-                    <span>Video Coming Soon</span>
-                  </span>
+                    <span>Video</span>
+                  </a>
                 </span>
               </div>
               <div class="project-meta-links">
@@ -116,7 +118,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on mobile devices. We argue that the central systems problem in this spatial-computing shift is not only scene representation quality, but whether dynamic spatial worlds can run in real time on constrained hardware, persist across revisits, and remain editable by non-expert creators. Built on 3D Gaussian Splatting and informed by 4D-GS, Portals has been deployed on iOS with a web-based viewer for spatial content. We contribute: (1) an edge-device runtime with adaptive quality management and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels, driving 370+ source-agnostic VFX effects at interactive frame rates; (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions, and no-code authoring; (4) a three-layer intent architecture where 91% of voice commands resolve locally in &lt;1 ms via regex, with cloud LLM fallback for ambiguous requests and graceful degradation when offline; and (5) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, persistent scenes, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
+              We present <strong>Portals</strong>, a deployed systems architecture that bridges 4D world-model research and persistent spatial experiences on phones, smart glasses, and augmented-reality headsets. The defining shift in spatial computing is not from 3D to 4D, but from stateless scenes to stateful worlds&mdash;scenes that persist, compound, and stay editable across sessions, devices, and users. Delivering such worlds on constrained hardware is the central systems problem: they must render in real time, survive revisits, and remain authorable through voice, gesture, and no-code tools. Built on 3D Gaussian Splatting and informed by 4D-GS and Generalizable Human Gaussians, Portals has been deployed on iOS, with web-based viewers (including Apple Vision Pro) for reconstructed environments, volumetric humans, and holographic spatial media. We contribute: (1) an edge-device runtime built around LOD-adaptive Gaussian splatting (SPAG) and a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels, driving 360+ source-agnostic VFX effects at 60 fps on iPhone 14 Pro (2.7&ndash;4.1&times; speedup); (2) a persistent geospatial scene-state architecture with layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions; (3) a creator-facing composition pipeline that bridges reconstruction and generation through VFX composition, voice-driven semantic actions (with on-device intent parsing and cloud fallback for ambiguous utterances), and no-code authoring; and (4) benchmark axes for evaluating 4D world models under deployment constraints such as mobile rendering efficiency, persistent scenes, and editable world state. Prior clinical deployment of volumetric AR at Memorial Sloan Kettering established the real-time rendering primitives underlying this work.
             </p>
           </div>
         </div>
@@ -203,6 +205,23 @@
     </div>
   </section>
 
+  <section id="supplemental-video" class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Supplemental Video</h2>
+          <div class="content has-text-centered">
+            <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+              <source src="static/videos/portals_cvpr2026_supp.mp4" type="video/mp4">
+              Your browser does not support HTML5 video. <a href="static/videos/portals_cvpr2026_supp.mp4">Download the video</a>.
+            </video>
+            <p class="figure-caption" style="margin-top:0.75rem;">Supplemental video accompanying the CVPR 2026 Workshop submission. Captured on device (iPhone 15 Pro, iPad Pro, Apple Vision Pro). <a href="static/videos/portals_cvpr2026_supp.mp4" download>Download MP4</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -231,7 +250,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Status</h2>
           <div class="content has-text-centered">
-            <p>The paper PDF linked here is the camera-ready version (v5, April 2026). It documents a mobile-first Unity URP and VFX Graph runtime for persistent editable 4D worlds on iOS, with adaptive quality management, voice-driven scene authoring (91% local parse rate), and 370+ production VFX effects. The interactive web demo, code release, and video will be published after workshop timing is finalized.</p>
+            <p>The paper linked above is the accepted camera-ready submitted to the CVPR 2026 Workshop on 4D World Models (Bridging Generation and Reconstruction), certified by IEEE PDF eXpress on April 11, 2026. The interactive web demo, code release, and expanded project materials will follow after the workshop.</p>
           </div>
         </div>
       </div>
