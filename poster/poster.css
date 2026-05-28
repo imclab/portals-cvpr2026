@@ -59,7 +59,7 @@ html, body {
   margin: 0;
   padding: 70px 90px 90px;
   display: grid;
-  grid-template-rows: 1100px 1fr 220px 540px 360px;
+  grid-template-rows: 1080px 1fr 220px 480px 360px;
   gap: 36px;
   overflow: hidden;
   background-image:
@@ -303,19 +303,31 @@ html, body {
   border-left: 4px solid var(--pull);
 }
 
-/* Figures — contained, never overflow row */
-.fig { display: grid; gap: 8px; min-height: 0; }
+/* Figures — wrap img in aspect-constrained container so width fills column
+   AND height caps at row budget. Two heights: regular + bleed. */
+.fig { display: grid; gap: 8px; min-height: 0; overflow: hidden; }
 .fig img {
+  display: block;
   width: 100%;
-  max-height: 720px;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   object-position: left top;
-  display: block;
   background: var(--paper);
   border: 1px solid var(--ink);
 }
-.fig-bleed img { border: none; max-height: 540px; object-fit: cover; object-position: center center; }
+/* Per-figure wrappers — pinned aspect via wrapper containers */
+.fig { }
+.fig::before { /* unused */ }
+
+/* Direct img height controls by parent bay row context */
+.bay .fig img {
+  max-height: 460px;
+}
+.b-creator .fig-bleed img { border: none; max-height: 440px; object-fit: cover; object-position: center 30%; }
+.b-pipe .fig img { max-height: 440px; }
+.b-meta .fig img { max-height: 440px; object-fit: cover; }
+
+.bay { overflow: hidden; }
 
 /* ── VOICE WEDGE BAND — full-width editorial pull-quote ─────────────── */
 .vband {
@@ -477,6 +489,47 @@ figcaption {
 .tbl td { padding: 9px 4px; border-bottom: 1px solid var(--hair); color: var(--ink-soft); }
 .tbl tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
 .tbl td.hi { color: var(--pull); font-weight: 600; }
+
+/* HERO STATS strip — 3 callouts inline below LOD chart */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  margin: 4px 0;
+}
+.st {
+  display: grid;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 3px solid var(--pull);
+}
+.st-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+}
+.st-suf {
+  color: var(--pull);
+  font-style: italic;
+  font-size: 0.55em;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+.st-lbl {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
 
 /* Contract */
 .contract {

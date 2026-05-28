@@ -91,6 +91,11 @@
     <article class="bay b-runtime"><div class="bh"><span class="bn">01</span><h2>Edge runtime</h2></div>
       <p class="sub">SPAG — Spherical Pixel-Aligned Gaussians — with FPS+thermal adaptive LOD.</p>
       <figure class="fig"><img src="../static/images/lod-performance.png" alt=""><figcaption><span class="fct">FIG&nbsp;1</span> Median frame time, no-LOD vs LOD-adaptive, three commodity mobile devices. Dashed line marks the 60 fps render budget (16.7 ms). LOD recovers 2.7–4.1×.</figcaption></figure>
+      <div class="stats">
+        <div class="st"><span class="st-num">2.7&ndash;4.1<span class="st-suf">×</span></span><span class="st-lbl">render speed-up<br>LOD on / off · A16 · A14 · SD 8G2</span></div>
+        <div class="st"><span class="st-num">60<span class="st-suf">fps</span></span><span class="st-lbl">sustained on iPhone 14 Pro<br>at thermal steady-state</span></div>
+        <div class="st"><span class="st-num">360<span class="st-suf">+</span></span><span class="st-lbl">VFX effects bound to one<br>5-property compute contract</span></div>
+      </div>
       <table class="tbl"><caption><span class="tct">T&nbsp;1</span> Render time · 12 splats · 3 video · 1 avatar · n=30 s post-thermal</caption>
         <thead><tr><th>Device</th><th class="r">No LOD</th><th class="r">LOD</th><th class="r">fps</th></tr></thead>
         <tbody>
