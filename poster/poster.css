@@ -59,7 +59,7 @@ html, body {
   margin: 0;
   padding: 70px 90px 90px;
   display: grid;
-  grid-template-rows: 1100px 1fr 540px 380px;
+  grid-template-rows: 1100px 1fr 220px 540px 360px;
   gap: 36px;
   overflow: hidden;
   background-image:
@@ -315,7 +315,138 @@ html, body {
   background: var(--paper);
   border: 1px solid var(--ink);
 }
-.fig-bleed img { border: none; max-height: 900px; object-fit: contain; }
+.fig-bleed img { border: none; max-height: 540px; object-fit: cover; object-position: center center; }
+
+/* ── VOICE WEDGE BAND — full-width editorial pull-quote ─────────────── */
+.vband {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 60px;
+  padding: 32px 40px;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+}
+.vband::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 4px solid var(--ink);
+  background-image: radial-gradient(ellipse 800px 300px at 20% 30%, rgba(107,15,26,0.25), transparent 70%);
+  pointer-events: none;
+}
+.vb-lhs { display: grid; align-content: center; gap: 14px; position: relative; }
+.vb-kicker {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #E8C2B8;
+  text-transform: uppercase;
+}
+.vb-utter {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.1;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+}
+.vb-rhs { display: grid; gap: 14px; align-content: center; position: relative; }
+.vb-flow {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+}
+.vb-flow li {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  display: grid;
+  gap: 4px;
+}
+.vb-flow li small { font-family: var(--sans); font-weight: 400; font-size: 12px; letter-spacing: 0.04em; color: #C8C0B0; text-transform: none; }
+.vb-num {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 28px;
+  color: #E8C2B8;
+  line-height: 1;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.vb-arr {
+  font-family: var(--mono);
+  font-size: 32px;
+  color: #E8C2B8;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0 4px;
+  align-self: center;
+}
+.vb-cite {
+  font-family: var(--display) !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  color: #D8D0C0 !important;
+}
+
+/* Voice command vignette — typography moment (UNUSED, kept for ref) */
+.vquote {
+  position: relative;
+  padding: 14px 20px 14px 60px;
+  background: var(--paper-tint);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.vq-mark {
+  position: absolute;
+  top: -10px; left: 12px;
+  font-family: var(--display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 96px;
+  color: var(--pull);
+  line-height: 1;
+}
+.vq-utter {
+  font-family: var(--display) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+  color: var(--ink) !important;
+  margin-bottom: 8px;
+}
+.vq-flow {
+  font-family: var(--mono) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.04em !important;
+  color: var(--pull) !important;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.vq-step {
+  display: inline-block;
+  font-weight: 600;
+  padding: 2px 8px;
+  border: 1px solid var(--pull);
+  background: var(--paper);
+  margin: 0 2px;
+}
+.vq-cite {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+  color: var(--muted) !important;
+}
 figcaption {
   font-family: var(--sans);
   font-size: 14px;
@@ -386,39 +517,41 @@ figcaption {
 .rail {
   display: grid;
   grid-template-columns: 5fr 7fr;
-  gap: 48px;
-  padding-top: 14px;
+  gap: 56px;
+  padding-top: 18px;
   border-top: 4px solid var(--ink);
 }
-.ra-h { padding-bottom: 6px; }
+.ra-h { padding-bottom: 12px; }
+.ra-h .bn { font-size: 52px; }
+.ra-h h2 { font-size: 30px; }
 
 .axes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px 18px;
+  gap: 18px 22px;
 }
 .ax {
   position: relative;
-  padding: 12px 14px 12px 56px;
+  padding: 16px 18px 16px 64px;
   background: var(--paper-tint);
   border-top: 2px solid var(--ink);
 }
-.ax-n { position: absolute; top: 10px; left: 14px; font-family: var(--display); font-weight: 900; font-size: 32px; color: var(--pull); line-height: 1; letter-spacing: -0.03em; }
-.ax h3 { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.1; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 4px; }
-.ax p { font-size: 14px; line-height: 1.35; color: var(--ink-soft); font-family: var(--sans); }
-.ax-status { display: inline-block; margin-top: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pull); padding: 2px 8px; border: 1px solid var(--pull); }
+.ax-n { position: absolute; top: 14px; left: 18px; font-family: var(--display); font-weight: 900; font-size: 38px; color: var(--pull); line-height: 1; letter-spacing: -0.03em; }
+.ax h3 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 6px; }
+.ax p { font-size: 16px; line-height: 1.4; color: var(--ink-soft); font-family: var(--sans); }
+.ax-status { display: inline-block; margin-top: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pull); padding: 3px 10px; border: 1px solid var(--pull); }
 .ax-status.status-open { color: var(--ink-soft); border-color: var(--ink-soft); }
 
 .disc {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 .dc h3 {
   font-family: var(--display); font-weight: 700; font-style: italic;
-  font-size: 18px; color: var(--ink);
-  margin-bottom: 5px;
-  border-bottom: 1px solid var(--ink); padding-bottom: 3px;
+  font-size: 20px; color: var(--ink);
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--ink); padding-bottom: 4px;
 }
 .dc p { font-size: 16px; line-height: 1.45; color: var(--ink-soft); font-family: var(--sans); }
 .dc-lim ul { list-style: none; display: grid; gap: 5px; }

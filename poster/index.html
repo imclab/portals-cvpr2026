@@ -135,7 +135,7 @@
     <!-- Row 2 -->
     <article class="bay b-creator"><div class="bh"><span class="bn">04</span><h2>Creator interfaces</h2></div>
       <p class="sub">Three steps: photo → upload → publish. Four authoring surfaces lower to one persistent scene graph.</p>
-      <figure class="fig fig-bleed"><img src="../static/images/hero_composer.jpg" alt=""><figcaption><span class="fct">FIG&nbsp;2</span> Real iPhone 14 Pro captures. TL: brush + scene authoring. TR: VFX composition (Glitch · Bubbles · Trails · HumanCube). BL: voice command "add a pink sphere to the portal" parsed + executed locally. BR: direct manipulation with depth-driven effects.</figcaption></figure>
+      <figure class="fig fig-bleed"><img src="../static/images/hero_composer.jpg" alt=""><figcaption><span class="fct">FIG&nbsp;2</span> Real iPhone 14 Pro captures. TL: brush + scene authoring · TR: VFX composition (Glitch · Bubbles · Trails · HumanCube) · BL: voice command parsed + executed locally · BR: direct manipulation with depth-driven effects.</figcaption></figure>
     </article>
 
     <article class="bay b-pipe"><div class="bh"><span class="bn">05</span><h2>Content pipeline</h2></div>
@@ -146,6 +146,28 @@
       <figure class="fig"><img src="../static/images/metavido_uvmux.png" alt=""><figcaption><span class="fct">FIG&nbsp;4</span> UV-multiplexed spatial-video frame. Color RGB right · hue-encoded depth top-left · human stencil R-channel bottom-left · metadata barcode B-channel (12 floats/frame). Same 5-property contract works on live AR and decoded video — record · edit · replay. After Keijiro Takahashi, <em>MetavidoVFX</em>.</figcaption></figure>
     </article>
 
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       VOICE WEDGE BAND — full-width editorial pull-quote
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="vband">
+    <div class="vb-lhs">
+      <span class="vb-kicker">VOICE → AR · the thin wedge</span>
+      <blockquote class="vb-utter">&ldquo;add a pink sphere to the portal.&rdquo;</blockquote>
+    </div>
+    <div class="vb-rhs">
+      <ol class="vb-flow">
+        <li><span class="vb-num">1</span> UTTER<br><small>on-device speech</small></li>
+        <li><span class="vb-arr">→</span></li>
+        <li><span class="vb-num">2</span> REGEX&nbsp;PARSE<br><small>&lt;1&nbsp;ms · local</small></li>
+        <li><span class="vb-arr">→</span></li>
+        <li><span class="vb-num">3</span> SSG&nbsp;OP<br><small>scene graph edit</small></li>
+        <li><span class="vb-arr">→</span></li>
+        <li><span class="vb-num">4</span> VFX&nbsp;SPAWN<br><small>same op as direct&nbsp;UI</small></li>
+      </ol>
+      <p class="vb-cite">91 % success across 143-test regression · cloud LLM fallback for low-confidence. Voice + gesture + no-code all lower to the same scene-graph operations — the layered architecture that makes a 2-second voice-to-AR wedge possible on device.</p>
+    </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════════
