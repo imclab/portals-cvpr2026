@@ -59,7 +59,7 @@ html, body {
   margin: 0;
   padding: 70px 90px 90px;
   display: grid;
-  grid-template-rows: 950px 1fr 580px 420px;
+  grid-template-rows: 1100px 1fr 540px 380px;
   gap: 36px;
   overflow: hidden;
   background-image:
@@ -72,9 +72,9 @@ html, body {
    ════════════════════════════════════════════════════════════════════ */
 .mh {
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 30px;
-  padding-bottom: 24px;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 22px;
+  padding-bottom: 22px;
   border-bottom: 6px solid var(--ink);
   position: relative;
 }
@@ -136,13 +136,73 @@ html, body {
   font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 
+/* THESIS pull-quote row (under title) — Pentagram-style double-rule frame */
+.thesis-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 18px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.thesis {
+  font-family: var(--display) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  font-size: 26px !important;
+  line-height: 1.35 !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.005em;
+}
+.thesis em { font-style: italic; color: var(--pull); font-weight: 500; }
+.th-k {
+  display: inline-block;
+  font-family: var(--mono);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--pull);
+  text-transform: uppercase;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
 .mh-bot {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 80px;
   align-items: start;
-  padding-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid var(--hair);
+}
+
+/* PROVENANCE list — 3 deployment settings + clinical */
+.provenance {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 28px;
+  align-content: start;
+}
+.provenance li {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  padding-left: 0;
+  border-left: 3px solid var(--pull);
+  padding-left: 12px;
+}
+.pv-k {
+  display: block;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--pull);
+  text-transform: uppercase;
+  margin-bottom: 2px;
 }
 .mh-authors { display: grid; gap: 8px; align-content: start; }
 .ba-names {
@@ -177,7 +237,7 @@ html, body {
 .body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 720px minmax(0, 1fr);
   gap: 36px;
   min-height: 0;
 }
@@ -255,7 +315,7 @@ html, body {
   background: var(--paper);
   border: 1px solid var(--ink);
 }
-.fig-bleed img { border: none; max-height: 900px; object-fit: cover; }
+.fig-bleed img { border: none; max-height: 900px; object-fit: contain; }
 figcaption {
   font-family: var(--sans);
   font-size: 14px;
@@ -272,18 +332,18 @@ figcaption {
   font-size: 12px;
 }
 
-/* Tables */
-.tbl { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 16px; }
+/* Tables — bigger than before so row 1 doesn't feel empty */
+.tbl { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 19px; }
 .tbl caption { font-family: var(--sans); font-size: 13px; color: var(--muted); text-align: left; padding-bottom: 6px; caption-side: top; }
 .tct { font-family: var(--mono); font-weight: 600; color: var(--pull); letter-spacing: 0.16em; margin-right: 8px; text-transform: uppercase; font-size: 12px; }
 .tbl thead th {
-  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
   color: var(--ink); letter-spacing: 0.16em; text-transform: uppercase;
   text-align: left; padding: 6px 4px;
   border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink);
 }
 .tbl th.r, .tbl td.r { text-align: right; font-variant-numeric: tabular-nums; }
-.tbl td { padding: 6px 4px; border-bottom: 1px solid var(--hair); color: var(--ink-soft); }
+.tbl td { padding: 9px 4px; border-bottom: 1px solid var(--hair); color: var(--ink-soft); }
 .tbl tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
 .tbl td.hi { color: var(--pull); font-weight: 600; }
 
@@ -360,9 +420,9 @@ figcaption {
   margin-bottom: 5px;
   border-bottom: 1px solid var(--ink); padding-bottom: 3px;
 }
-.dc p { font-size: 14px; line-height: 1.4; color: var(--ink-soft); font-family: var(--sans); }
-.dc-lim ul { list-style: none; display: grid; gap: 4px; }
-.dc-lim li { font-family: var(--sans); font-size: 13px; line-height: 1.35; color: var(--ink-soft); padding-left: 16px; position: relative; }
+.dc p { font-size: 16px; line-height: 1.45; color: var(--ink-soft); font-family: var(--sans); }
+.dc-lim ul { list-style: none; display: grid; gap: 5px; }
+.dc-lim li { font-family: var(--sans); font-size: 15px; line-height: 1.4; color: var(--ink-soft); padding-left: 16px; position: relative; }
 .dc-lim li::before { content: "—"; position: absolute; left: 0; color: var(--pull); font-weight: 700; }
 
 /* ═════════════════════════════════════════════════════════════════════
