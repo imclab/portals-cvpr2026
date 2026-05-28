@@ -85,7 +85,13 @@ html, body {
   padding-bottom: 28px;
   border-bottom: 1px solid var(--hair-strong);
 }
-.logos { display: flex; align-items: baseline; gap: 64px; }
+.logos { display: flex; align-items: center; gap: 48px; }
+.iris {
+  width: 140px; height: 140px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 24px var(--accent-glow));
+  flex-shrink: 0;
+}
 .logo-h3m {
   font-weight: 900;
   font-size: 140px;
@@ -374,33 +380,38 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-/* Creator column */
+/* Creator column — real product imagery */
 .col-creator { grid-column: span 1; }
-.screens {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.hero-shot { display: grid; gap: 10px; }
+.hero-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--hair-strong);
+  background: var(--surf);
 }
-.shot {
-  display: grid;
-  gap: 8px;
-}
-.shot .ph {
-  aspect-ratio: 9 / 16;
-  background: linear-gradient(135deg, var(--surf-hi), var(--surf));
-  border: 1px solid var(--hair);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--mono);
-  font-size: 18px;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.shot figcaption {
+.hero-shot figcaption {
   font-family: var(--mono);
   font-size: 16px;
+  line-height: 1.4;
+  color: var(--fg-dim);
+  letter-spacing: 0.02em;
+}
+
+/* Inline diagram figures (col 02, 03) */
+.diagram { display: grid; gap: 10px; }
+.diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--fg);   /* most diagrams are dark-on-light */
+  padding: 12px;
+  border: 1px solid var(--hair-strong);
+}
+.diagram figcaption {
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1.4;
   color: var(--fg-dim);
   letter-spacing: 0.02em;
 }

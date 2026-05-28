@@ -16,6 +16,7 @@
   <header class="top-strip">
     <div class="brand-row">
       <div class="logos">
+        <img class="iris" src="../static/images/iris-1024.png" alt="Iris" onerror="this.style.display='none'">
         <span class="logo-h3m">h3m</span>
         <span class="logo-imc">THE IMC LAB</span>
       </div>
@@ -80,6 +81,11 @@
       <h3 class="sec-title">Edge runtime · shared substrate</h3>
       <p class="lede">SPAG — Spherical Pixel-Aligned Gaussians — with adaptive LOD. One depth-to-world pass feeds every effect.</p>
 
+      <figure class="diagram">
+        <img src="../static/images/content-pipeline.png" alt="Content ingestion pipeline">
+        <figcaption>Phone camera · text/image prompt · multi-photo → Spatial Scene Graph → LOD Manager + VFX Pipeline → device + Firebase persistence</figcaption>
+      </figure>
+
       <div class="contract">
         <div class="contract-input">AR depth · color · audio · ML pose</div>
         <div class="contract-arrow">↓</div>
@@ -95,6 +101,11 @@
         <div class="contract-arrow">↓</div>
         <div class="contract-output">360+ VFX · O(1) per added effect</div>
       </div>
+
+      <figure class="diagram">
+        <img src="../static/images/lod-performance.png" alt="LOD median frame time across 3 devices">
+        <figcaption>Median frame time · 60 fps budget (16.7 ms) shown as dashed line · 2.7–4.1× speed-up</figcaption>
+      </figure>
 
       <table class="perf">
         <caption>Frame time, no-LOD vs LOD-adaptive (median, n=30s post-thermal)</caption>
@@ -140,12 +151,15 @@
       <h3 class="sec-title">Creator interfaces · deployed</h3>
       <p class="lede">Voice + gesture + no-code, lowering to the same scene-graph operations. <strong>Three steps: photo → upload → publish.</strong></p>
 
-      <div class="screens">
-        <figure class="shot"><div class="ph">scene authoring</div><figcaption>brush · materials · objects</figcaption></figure>
-        <figure class="shot"><div class="ph">environment VFX</div><figcaption>live camera + effect lib</figcaption></figure>
-        <figure class="shot"><div class="ph">hologram runtime</div><figcaption>interactive placement</figcaption></figure>
-        <figure class="shot"><div class="ph">body-stencil VFX</div><figcaption>depth-driven · stencil-masked</figcaption></figure>
-      </div>
+      <figure class="hero-shot">
+        <img src="../static/images/hero_composer.jpg" alt="4 real Portals in-app captures">
+        <figcaption>Real in-app captures · iPhone 14 Pro · brush + hologram + voice + hand · same scene graph, four authoring surfaces</figcaption>
+      </figure>
+
+      <figure class="hero-shot">
+        <img src="../static/images/runtime-real-app-grid-v3.jpg" alt="Runtime interface grid">
+        <figcaption>Brush · environment VFX library · jARvis voice response · body-stencil depth-driven effects</figcaption>
+      </figure>
 
       <div class="metavido">
         <h4>Spatial-video record · edit · replay</h4>
