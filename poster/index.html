@@ -3,262 +3,203 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portals — CVPR 2026 Workshop Poster v7</title>
+<title>Portals — CVPR 2026 4D World Models — Poster v8</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=fraunces@900,700,500,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="poster.css">
 <script>
-  // Auto-fit 8400×4200 sheet to any browser viewport.
-  // Keeps 1:1 print fidelity — only the on-screen view scales.
   function fitPoster() {
-    var p = document.getElementById('poster');
-    if (!p) return;
-    var sx = window.innerWidth  / 8400;
-    var sy = window.innerHeight / 4200;
-    var s  = Math.min(sx, sy) * 0.98; // 2% padding
+    var p = document.getElementById('poster'); if (!p) return;
+    var s  = Math.min(window.innerWidth / 8400, window.innerHeight / 4200) * 0.98;
     p.style.transform = 'scale(' + s + ')';
     p.style.transformOrigin = 'top left';
-    var w = 8400 * s, h = 4200 * s;
-    p.style.marginLeft = ((window.innerWidth  - w) / 2) + 'px';
-    p.style.marginTop  = ((window.innerHeight - h) / 2) + 'px';
+    p.style.marginLeft = ((window.innerWidth  - 8400 * s) / 2) + 'px';
+    p.style.marginTop  = ((window.innerHeight - 4200 * s) / 2) + 'px';
   }
-  window.addEventListener('load',   fitPoster);
+  window.addEventListener('load', fitPoster);
   window.addEventListener('resize', fitPoster);
-  // Click toggles 100% (actual size) vs fit
   document.addEventListener('DOMContentLoaded', function () {
     var actual = false;
-    document.getElementById('zoom-toggle').addEventListener('click', function (e) {
+    var btn = document.getElementById('zoom-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
       actual = !actual;
       var p = document.getElementById('poster');
-      if (actual) {
-        p.style.transform = 'none';
-        p.style.marginLeft = '0';
-        p.style.marginTop  = '0';
-        document.body.style.overflow = 'auto';
-        this.textContent = 'Fit to window';
-      } else {
-        document.body.style.overflow = 'hidden';
-        fitPoster();
-        this.textContent = 'View 100% (8400×4200)';
-      }
+      if (actual) { p.style.transform='none'; p.style.marginLeft='0'; p.style.marginTop='0'; document.body.style.overflow='auto'; this.textContent='FIT'; }
+      else        { document.body.style.overflow='hidden'; fitPoster(); this.textContent='100%'; }
     });
   });
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="poster.css">
 </head>
 <body>
 
-<div class="topbar">
-  <span class="topbar-title">Portals · CVPR 2026 4D World Models workshop poster</span>
-  <a href="#" id="zoom-toggle" class="topbar-btn">View 100% (8400×4200)</a>
-  <a href="../" class="topbar-btn">← Project page</a>
-</div>
-
-<div class="portrait-hint">
-  Rotate device to landscape for best view (poster is 84×42″).
-</div>
+<nav class="topbar">
+  <span class="tb-l">PORTALS · CVPR 2026 · 4D World Models Workshop poster</span>
+  <a href="#" id="zoom-toggle" class="tb-btn">100%</a>
+  <a href="../" class="tb-btn">PROJECT PAGE ↗</a>
+</nav>
+<div class="portrait-hint">Rotate to landscape · poster is 84″ × 42″ (2 : 1)</div>
 
 <main class="poster" id="poster">
 
-  <!-- ── HEADER ────────────────────────────────────────────────────────── -->
-  <header class="hd">
-    <img class="qr qr-l" src="../static/images/qr_paper.png" alt="Paper QR">
-
-    <div class="hd-mid">
-      <div class="conf-line">
-        CVPR 2026 Workshop &nbsp;·&nbsp; <strong>4D World Models: Bridging Generation and Reconstruction</strong> &nbsp;·&nbsp; Brown IVL &nbsp;·&nbsp; Denver, Colorado &nbsp;·&nbsp; June 3–7, 2026
+  <!-- ════════════════════════════════════════════════════════════════════
+       MASTHEAD — compact single-line title + lede row
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="mh">
+    <div class="mh-top">
+      <div class="mh-kick">
+        <span class="kicker">CVPR 2026 · 4D World Models Workshop</span>
+        <span class="kicker-sub">Brown IVL · Denver, Colorado · June 3–7, 2026</span>
       </div>
-      <h1 class="title">Portals: Persistent, Editable 4D Spatial World Models on Edge Devices</h1>
-      <div class="authors">
-        James A. Tunick<sup>1,2</sup>&nbsp;&nbsp; Ryan Brant<sup>1</sup>&nbsp;&nbsp; Jacob D. Pennock<sup>1</sup>&nbsp;&nbsp; Justin Kasowski<sup>1</sup>
-      </div>
-      <div class="affs">
-        <sup>1</sup>H3M, Inc., USA &nbsp;&nbsp; <sup>2</sup>The IMC Lab, USA &nbsp;&nbsp; <span class="page-link">imclab.github.io/portals-cvpr2026</span>
+      <div class="mh-qrs">
+        <figure class="qr-cell"><img src="../static/images/qr_paper.png" alt=""><figcaption>PAPER</figcaption></figure>
+        <figure class="qr-cell"><img src="../static/images/qr_code.png" alt=""><figcaption>PROJECT</figcaption></figure>
+        <figure class="qr-cell"><img src="../static/images/qr_demo.png" alt=""><figcaption>DEMO VIDEO</figcaption></figure>
       </div>
     </div>
 
-    <img class="qr qr-r" src="../static/images/qr_demo.png" alt="Project page QR">
+    <h1 class="dt">Persistent, editable <em>4D</em> spatial world models on edge devices</h1>
+
+    <div class="mh-bot">
+      <div class="mh-authors">
+        <span class="ba-names">James A. Tunick<sup>1,2</sup> · Ryan Brant<sup>1</sup> · Jacob D. Pennock<sup>1</sup> · Justin Kasowski<sup>1</sup></span>
+        <span class="ba-aff"><sup>1</sup>H3M, Inc.&nbsp;USA &nbsp;·&nbsp; <sup>2</sup>The IMC Lab&nbsp;USA</span>
+      </div>
+      <p class="lede">
+        We present <strong>Portals</strong>, a deployed 4D spatial world-model system for the edge-device era. The defining shift is not 3D → 4D — it is <em>stateless scenes</em> → <em>stateful worlds</em>: scenes that persist, compound, and stay editable across sessions, devices, and users. We contribute (i) an edge-device runtime with LOD-adaptive Gaussian splatting + a shared spatial-media compute substrate driving 360+ source-agnostic VFX at 60 fps on iPhone 14 Pro (2.7–4.1× speed-up); (ii) a persistent geospatial scene-state architecture with reloadable scene payloads and anchor-guided re-alignment; (iii) a creator pipeline bridging reconstruction + generation via VFX composition, voice-driven actions, and no-code authoring; (iv) four benchmark axes for production 4D world models.
+      </p>
+    </div>
   </header>
 
-  <!-- ── BODY GRID ─────────────────────────────────────────────────────── -->
+  <!-- ════════════════════════════════════════════════════════════════════
+       BODY — 12-col asymmetric editorial grid, two-row layout
+       ═══════════════════════════════════════════════════════════════════ -->
   <section class="body">
 
-    <!-- COL 1 -->
-    <article class="col">
-      <h2><span class="sn">1</span> Contribution</h2>
-      <p>We present <strong>Portals</strong>, a deployed 4D spatial world-model system for the edge-device era. The paper's core result is not a single isolated representation, but a deployment stack that proves three coupled requirements can be satisfied together: <em>real-time runtime performance</em> on commodity mobile hardware, <em>persistent scene state</em> across revisits, and <em>creator-facing world editing</em> that bridges reconstruction and generation.</p>
-      <ul class="contrib">
-        <li><strong>Edge runtime:</strong> SPAG — Spherical Pixel-Aligned Gaussians — w/ LOD-adaptive quality + a shared spatial-media compute substrate that fuses depth, stencil, audio, and ML-pose channels, driving 360+ source-agnostic VFX at 60 fps on iPhone 14 Pro (2.7–4.1× speed-up).</li>
-        <li><strong>Persistence:</strong> geospatial scene-state architecture w/ layered world metadata, reloadable scene payloads, and anchor-guided re-alignment across sessions.</li>
-        <li><strong>Creator interface:</strong> composition pipeline bridging reconstruction and generation through VFX composition, voice-driven semantic actions (on-device parser + cloud fallback), and no-code authoring.</li>
-        <li><strong>Benchmark axes</strong> for production 4D world models — mobile efficiency, geospatial alignment, persistence fidelity, creator editability.</li>
-      </ul>
-
-      <h2><span class="sn">2</span> Background</h2>
-      <p>3D Gaussian Splatting [Kerbl 2023] became the de facto backbone for AR/VR via real-time rasterization. 4D representations followed: 4D-GS [Wu 2024], K-Planes [Fridovich-Keil 2023], MoSca [Lei 2024], Shape-of-Motion [Wang 2025], GHG [Kwon 2024]. Recent feed-forward systems (CUT3R [Wang 2025], VGGT [Wang 2025], MegaSaM [Li 2025]) trend toward real-time perception. Generation-first models (Genie, WorldGen [Sarafianos 2025]) provide a complementary endpoint. <strong>Portals targets the open deployment problem</strong>: representations are mature; making them persistent, editable, and authorable on edge devices is not.</p>
-    </article>
-
-    <!-- COL 2 -->
-    <article class="col">
-      <h2><span class="sn">3</span> Platform architecture</h2>
-      <figure>
-        <img src="../static/images/architecture.png" alt="Portals platform — 4-layer architecture">
-        <figcaption>Fig. 1 · Four-layer stack: Layer 1 Geospatial Persistence (Firebase, GPS+ARKit, CUT3R relocalization, photometric); Layer 2 XR Rendering Engine (Unity 6, LOD-adaptive 3DGS, sparse depth→VFX, GHG avatar); Layer 3 Content Generation + Authoring (3-pathway ingest, voice + LLM, drag-and-drop composer); Layer 4 Distribution + Discovery (TikTok-style feed, cross-platform iOS/Android/VisionPro/Web).</figcaption>
-      </figure>
-
-      <h2><span class="sn">4</span> Content ingestion pipeline</h2>
-      <figure>
-        <img src="../static/images/content-pipeline.png" alt="Content pipeline — three asset pathways">
-        <figcaption>Fig. 2 · Three ingestion pathways (Gaussian Splatting capture · photogrammetry · AI generation) normalize to a Spatial Scene Graph (SSG). LOD Manager + VFX Pipeline render and persist to Firebase / device display. Latent Gaussian generation [L3DG, Roessle 2024] identified as future work.</figcaption>
-      </figure>
-    </article>
-
-    <!-- COL 3 -->
-    <article class="col">
-      <h2><span class="sn">5</span> LOD-adaptive runtime</h2>
-
-      <figure>
-        <img src="../static/images/lod-performance.png" alt="Median frame time with/without LOD">
-        <figcaption>Fig. 3 · Median frame time (n=30 s post-thermal). LOD reduces render cost 2.7–4.1× across A16 / A14 / SD 8G2, hitting 60 fps budget (red dashed 16.7 ms).</figcaption>
-      </figure>
-
-      <table class="tbl">
-        <caption>Table 1 · LOD tier thresholds + Gaussian budgets (design target — runtime uses FPS+thermal adaptive).</caption>
-        <thead><tr><th>Tier</th><th>d range</th><th>Scale</th><th>Density</th></tr></thead>
+    <!-- Row 1 -->
+    <article class="bay b-runtime"><div class="bh"><span class="bn">01</span><h2>Edge runtime</h2></div>
+      <p class="sub">SPAG — Spherical Pixel-Aligned Gaussians — with FPS+thermal adaptive LOD.</p>
+      <figure class="fig"><img src="../static/images/lod-performance.png" alt=""><figcaption><span class="fct">FIG&nbsp;1</span> Median frame time, no-LOD vs LOD-adaptive, three commodity mobile devices. Dashed line marks the 60 fps render budget (16.7 ms). LOD recovers 2.7–4.1×.</figcaption></figure>
+      <table class="tbl"><caption><span class="tct">T&nbsp;1</span> Render time · 12 splats · 3 video · 1 avatar · n=30 s post-thermal</caption>
+        <thead><tr><th>Device</th><th class="r">No LOD</th><th class="r">LOD</th><th class="r">fps</th></tr></thead>
         <tbody>
-          <tr><td>HIGH</td><td>0–3 m</td><td>1.0×</td><td>N</td></tr>
-          <tr><td>MEDIUM</td><td>3–8 m</td><td>0.6×</td><td>0.4 N</td></tr>
-          <tr><td>LOW</td><td>8–25 m</td><td>0.3×</td><td>0.15 N</td></tr>
-          <tr><td>CULL</td><td>&gt;25 m</td><td>—</td><td>0</td></tr>
-        </tbody>
-      </table>
-
-      <table class="tbl">
-        <caption>Table 2 · Median render times (12 Gaussian assets · 3 video overlays · 1 avatar).</caption>
-        <thead><tr><th>Device</th><th>No LOD</th><th>LOD</th><th>fps</th></tr></thead>
-        <tbody>
-          <tr><td>iPhone 14 Pro · A16</td><td>38 ms</td><td><strong>14.2 ms</strong></td><td><strong>60+</strong></td></tr>
-          <tr><td>iPhone 12 · A14</td><td>81 ms</td><td>19.7 ms</td><td>48</td></tr>
-          <tr><td>Galaxy S23 · SD 8G2</td><td>44 ms</td><td>15.8 ms</td><td>57</td></tr>
+          <tr><td>iPhone 14 Pro · A16</td><td class="r">38 ms</td><td class="r hi">14.2 ms</td><td class="r hi">60+</td></tr>
+          <tr><td>iPhone 12 · A14</td><td class="r">81 ms</td><td class="r">19.7 ms</td><td class="r">48</td></tr>
+          <tr><td>Galaxy S23 · SD 8G2</td><td class="r">44 ms</td><td class="r">15.8 ms</td><td class="r">57</td></tr>
         </tbody>
       </table>
     </article>
 
-    <!-- COL 4 -->
-    <article class="col">
-      <h2><span class="sn">6</span> Shared compute substrate</h2>
-      <p>One depth-to-world compute dispatch per frame (32×32 thread groups · Metal/Vulkan). Outputs bound through a 5-property contract <span class="mono">(ColorMap · DepthMap · RayParams · InverseView · DepthRange)</span> consumed by 360+ VFX. <strong>O(1) compute scaling</strong> — additional effects only add binding + rendering cost, never the shared depth-to-world pass.</p>
+    <article class="bay b-compute"><div class="bh"><span class="bn">02</span><h2>Shared compute</h2></div>
+      <p class="sub">One depth-to-world dispatch per frame (<span class="m">32×32</span> threads · Metal/Vulkan). 5-property contract consumed by every effect.</p>
+      <div class="contract">
+        <div class="c-row c-in">depth · color · audio · ML pose</div><div class="c-arrow">↓</div>
+        <div class="c-row c-shader">DepthToWorld compute</div><div class="c-arrow">↓</div>
+        <ul class="c-props"><li>ColorMap</li><li>DepthMap</li><li>RayParams</li><li>InverseView</li><li>DepthRange</li></ul>
+        <div class="c-arrow">↓</div>
+        <div class="c-row c-out">360+ VFX · O(1) per added effect</div>
+      </div>
+      <p class="callout">Adding effects increases only binding cost — never the shared depth-to-world pass.</p>
+    </article>
 
-      <h2><span class="sn">7</span> Geospatial persistence</h2>
-      <p>Three-tier path matched to edge constraints:</p>
+    <article class="bay b-persist"><div class="bh"><span class="bn">03</span><h2>Persistence</h2></div>
+      <p class="sub">Three-tier path matched to edge constraints. Discover small · hydrate on open · replay edit log.</p>
       <ol class="schema">
-        <li><span class="kk">Metadata</span> — Firestore-indexed discovery, &lt;300 ms reload</li>
-        <li><span class="kk">Manifest (XRAI)</span> — scene structure + edit history; out-of-line geometry refs</li>
-        <li><span class="kk">Payload</span> — .splat / SPZ from object storage, &lt;1 s on LTE</li>
+        <li><span class="sk-k">METADATA</span><span class="sk-v">Firestore-indexed discovery · &lt;300 ms reload</span></li>
+        <li><span class="sk-k">MANIFEST</span><span class="sk-v">XRAI structure + edit history · out-of-line refs</span></li>
+        <li><span class="sk-k">PAYLOAD</span><span class="sk-v">.splat / SPZ from object storage · &lt;1 s LTE</span></li>
+        <li><span class="sk-k">RECOVERY</span><span class="sk-v">GPS → ARKit VIO → photometric · in dev</span></li>
       </ol>
-      <p>Recovery (in development): GPS coarse (±3–10 m) → ARKit VIO (cm) → photometric alignment vs pre-baked reference splat <span class="mono">L<sub>align</sub> = ‖I<sub>ref</sub> − I<sub>live</sub>‖₁ + λ<sub>SSIM</sub> L<sub>SSIM</sub></span>, λ<sub>SSIM</sub> = 0.2.</p>
-
-      <table class="tbl">
-        <caption>Table 4 · Persistence + editability (axes 3–4, deployed iOS).</caption>
+      <table class="tbl"><caption><span class="tct">T&nbsp;2</span> Persistence + editability metrics · deployed iOS · Axes 3–4</caption>
         <tbody>
-          <tr><td>Metadata reload</td><td><strong>&lt;300 ms</strong></td></tr>
-          <tr><td>Full hydration (LTE)</td><td>&lt;1 s</td></tr>
-          <tr><td>Draft survival / restart</td><td>10/10</td></tr>
-          <tr><td>Voice parse latency</td><td>&lt;1 ms</td></tr>
-          <tr><td>Voice intent (143 tests)</td><td><strong>91%</strong></td></tr>
+          <tr><td>Metadata reload</td><td class="r hi">&lt;300 ms</td></tr>
+          <tr><td>Full hydration · LTE</td><td class="r">&lt;1 s</td></tr>
+          <tr><td>Draft survival · app restart</td><td class="r">10 / 10</td></tr>
+          <tr><td>Voice parse · local regex</td><td class="r">&lt;1 ms</td></tr>
+          <tr><td>Voice intent (143-test regression)</td><td class="r hi">91 %</td></tr>
         </tbody>
       </table>
     </article>
 
-    <!-- COL 5 -->
-    <article class="col">
-      <h2><span class="sn">8</span> Voice + no-code authoring</h2>
-      <p>Local regex parser handles common intents; cloud LLM for low-confidence. Both emit the same scene operations as direct manipulation and no-code controls.</p>
-      <table class="tbl tbl-compact">
-        <caption>Table 3 · Voice intent parsing across 14 semantic categories.</caption>
-        <thead><tr><th>Category</th><th>Tests</th><th>Local</th></tr></thead>
-        <tbody>
-          <tr><td>Object creation</td><td>30</td><td>100%</td></tr>
-          <tr><td>Object modification</td><td>12</td><td>100%</td></tr>
-          <tr><td>Animation (8 types)</td><td>9</td><td>100%</td></tr>
-          <tr><td>Formation</td><td>8</td><td>100%</td></tr>
-          <tr><td>Structure gen</td><td>11</td><td>85%</td></tr>
-          <tr><td>Audio wiring</td><td>7</td><td>100%</td></tr>
-          <tr><td>Lighting</td><td>7</td><td>100%</td></tr>
-          <tr><td>VFX, atmos, other</td><td>51</td><td>88%</td></tr>
-          <tr class="ttl"><td><strong>Total · 14 cats</strong></td><td><strong>143</strong></td><td><strong>91%</strong></td></tr>
-        </tbody>
-      </table>
-
-      <h2><span class="sn">9</span> Spatial-media substrate</h2>
-      <figure>
-        <img src="../static/images/metavido_uvmux.png" alt="UV-multiplexed spatial-video frame">
-        <figcaption>Fig. 4 · UV-mux 1920×1080: color RGB right · hue-encoded depth TL · human stencil R-channel BL · metadata barcode B-channel BL (12 floats/frame). Same 5-property contract on live AR + decoded spatial video, enabling record–edit–replay. After Keijiro Takahashi, MetavidoVFX.</figcaption>
-      </figure>
+    <!-- Row 2 -->
+    <article class="bay b-creator"><div class="bh"><span class="bn">04</span><h2>Creator interfaces</h2></div>
+      <p class="sub">Three steps: photo → upload → publish. Four authoring surfaces lower to one persistent scene graph.</p>
+      <figure class="fig fig-bleed"><img src="../static/images/hero_composer.jpg" alt=""><figcaption><span class="fct">FIG&nbsp;2</span> Real iPhone 14 Pro captures. TL: brush + scene authoring. TR: VFX composition (Glitch · Bubbles · Trails · HumanCube). BL: voice command "add a pink sphere to the portal" parsed + executed locally. BR: direct manipulation with depth-driven effects.</figcaption></figure>
     </article>
 
-    <!-- COL 6 -->
-    <article class="col">
-      <h2><span class="sn">10</span> Creator interfaces</h2>
-      <figure>
-        <img src="../static/images/hero_composer.jpg" alt="Real in-app creator captures">
-        <figcaption>Fig. 5 · Real iPhone 14 Pro captures. Top-L: brush + scene authoring. Top-R: VFX-composition toolbar (Glitch, Bubbles, Trails, HumanCube). Bot-L: voice command "add a pink sphere to the portal" parsed and executed locally. Bot-R: direct manipulation w/ depth-driven effects. All four interfaces lower to the same persistent scene graph.</figcaption>
-      </figure>
+    <article class="bay b-pipe"><div class="bh"><span class="bn">05</span><h2>Content pipeline</h2></div>
+      <figure class="fig"><img src="../static/images/content-pipeline.png" alt=""><figcaption><span class="fct">FIG&nbsp;3</span> Three pathways — Gaussian capture · photogrammetry · AI generation — normalize into a Spatial Scene Graph (SSG) that the LOD Manager + VFX Pipeline render and persist. Latent Gaussian generation [L3DG, Roessle 2024] is identified as future work.</figcaption></figure>
+    </article>
 
-      <h2><span class="sn">11</span> Discussion</h2>
-      <p><strong>Reconstruction vs capture burden.</strong> Even w/ ReconFusion-style priors, casual phone video introduces blur and dynamic-object artifacts. Shape-of-Motion [Wang 2025] and MoSca [Lei 2024] improve robustness; real-time monocular 4D capture for in-the-wild AR remains open.</p>
-      <p><strong>Editability.</strong> Compositing a Gaussian avatar into a Gaussian background w/o seams is open. Feature-field extensions [LangSplat] begin to help but do not resolve.</p>
-      <p><strong>Privacy.</strong> Persisting 3D scans at scale raises bystander + interior consent issues. Portals enforces client-side ephemeral buffers + keyframe-only upload. Principled framework remains open.</p>
-      <p><strong>Limits of this paper.</strong> Axis 2 (geospatial alignment accuracy) not yet measured at device scale. Voice eval is automated regression, not user study. Three-signal recovery + photometric relocalization in active development. L3DG-style latent generation = future.</p>
-
-      <h2><span class="sn">12</span> Benchmark axes (proposed)</h2>
-      <ol class="axes">
-        <li><strong>Mobile render efficiency</strong> — median + p95 frame time on commodity mobile GPUs</li>
-        <li><strong>Geospatial alignment accuracy</strong> — registration error after re-entry</li>
-        <li><strong>Temporal persistence fidelity</strong> — anchor recovery rate · edit survival · reload cost</li>
-        <li><strong>Creator editability</strong> — semantic-action success · edit-to-preview latency</li>
-      </ol>
+    <article class="bay b-meta"><div class="bh"><span class="bn">06</span><h2>Spatial-media substrate</h2></div>
+      <figure class="fig"><img src="../static/images/metavido_uvmux.png" alt=""><figcaption><span class="fct">FIG&nbsp;4</span> UV-multiplexed spatial-video frame. Color RGB right · hue-encoded depth top-left · human stencil R-channel bottom-left · metadata barcode B-channel (12 floats/frame). Same 5-property contract works on live AR and decoded video — record · edit · replay. After Keijiro Takahashi, <em>MetavidoVFX</em>.</figcaption></figure>
     </article>
 
   </section>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────────── -->
-  <footer class="ft">
-    <div class="ft-refs">
-      <h3>Selected references</h3>
+  <!-- ════════════════════════════════════════════════════════════════════
+       AXES + DISCUSSION RAIL (full width)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="rail">
+
+    <div class="rail-axes">
+      <div class="bh ra-h"><span class="bn">07</span><h2>Benchmark axes for production 4D world models</h2></div>
+      <div class="axes">
+        <div class="ax"><span class="ax-n">A1</span><h3>Mobile render efficiency</h3><p>median + p95 frame time on commodity mobile GPUs</p><span class="ax-status">REPORTED</span></div>
+        <div class="ax"><span class="ax-n">A2</span><h3>Geospatial alignment</h3><p>registration error after session re-entry</p><span class="ax-status status-open">OPEN</span></div>
+        <div class="ax"><span class="ax-n">A3</span><h3>Persistence fidelity</h3><p>anchor recovery · edit survival · reload cost</p><span class="ax-status">REPORTED</span></div>
+        <div class="ax"><span class="ax-n">A4</span><h3>Creator editability</h3><p>semantic-action success · edit-to-preview latency</p><span class="ax-status">REPORTED</span></div>
+      </div>
+    </div>
+
+    <div class="rail-disc">
+      <div class="bh ra-h"><span class="bn">08</span><h2>Discussion · limits · future</h2></div>
+      <div class="disc">
+        <div class="dc"><h3>Reconstruction · capture burden</h3><p>Casual phone video introduces blur + dynamic-object artifacts even w/ ReconFusion priors. Shape-of-Motion + MoSca improve robustness; real-time monocular 4D for in-the-wild AR remains open.</p></div>
+        <div class="dc"><h3>Editability</h3><p>Compositing a Gaussian avatar into a Gaussian background without seams is open. Feature-field extensions (LangSplat) begin to help — do not resolve.</p></div>
+        <div class="dc"><h3>Privacy at scale</h3><p>Persisting 3D scans raises bystander + interior consent. Portals enforces client-side ephemeral buffers + keyframe-only upload. Principled framework = future.</p></div>
+        <div class="dc dc-lim"><h3>Limits of this paper</h3><ul><li>Axis 2 (alignment) not yet measured at device scale.</li><li>Voice eval = automated regression, not user study.</li><li>Three-signal recovery + photometric in active dev.</li><li>L3DG-style latent generation = future work.</li></ul></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       COLOPHON
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="col">
+
+    <div class="col-refs">
+      <div class="bh"><span class="bn bn-sm">R</span><h2>Selected references</h2></div>
       <ol class="refs">
-        <li>Kerbl <em>et al.</em> 3D Gaussian Splatting. <em>SIGGRAPH</em>, 2023.</li>
-        <li>Wu <em>et al.</em> 4D Gaussian Splatting. <em>CVPR</em>, 2024.</li>
-        <li>Lei <em>et al.</em> MoSca: Dynamic Gaussian Fusion via 4D Motion Scaffolds. <em>CVPR</em>, 2025.</li>
-        <li>Wang <em>et al.</em> Shape of Motion: 4D Reconstruction from a Single Video. <em>ICCV</em>, 2025.</li>
-        <li>Wang <em>et al.</em> CUT3R: Continuous 3D Perception w/ Persistent State. <em>CVPR Oral</em>, 2025.</li>
-        <li>Li <em>et al.</em> MegaSaM. <em>CVPR Best Paper Hon. Mention</em>, 2025.</li>
-        <li>Kwon <em>et al.</em> Generalizable Human Gaussians. <em>ECCV</em>, 2024.</li>
-        <li>Rota Bulò, Porzi, Kontschieder. Revising Densification in Gaussian Splatting. <em>ECCV</em>, 2024.</li>
-        <li>Bulò, Bartolovic, Porzi, Kontschieder. Hardware-Rasterized Ray-Based GS. <em>CVPR Highlight</em>, 2025.</li>
-        <li>Roessle <em>et al.</em> L3DG: Latent 3D Gaussian Diffusion. <em>SIGGRAPH Asia</em>, 2024.</li>
-        <li>Liu, Höllein, Nießner, Dai. QuickSplat. <em>ICCV</em>, 2025.</li>
-        <li>Sarafianos <em>et al.</em> WorldGen. arXiv:2511.16825.</li>
-        <li>Wu <em>et al.</em> ReconFusion. <em>CVPR</em>, 2024.</li>
-        <li>Sayman, Toplutas, Tunick, Aras. <sup>99m</sup>Tc-Vitamin C SPECT/CT. <em>Nucl. Med. Rev.</em> 25(2), 2022.</li>
+        <li>Kerbl et al. <em>3D Gaussian Splatting.</em> SIGGRAPH 2023.</li>
+        <li>Wu et al. <em>4D-GS.</em> CVPR 2024.</li>
+        <li>Lei et al. <em>MoSca · 4D Motion Scaffolds.</em> CVPR 2025.</li>
+        <li>Wang et al. <em>Shape of Motion.</em> ICCV 2025.</li>
+        <li>Wang et al. <em>CUT3R.</em> CVPR Oral 2025.</li>
+        <li>Li et al. <em>MegaSaM.</em> CVPR BPHM 2025.</li>
+        <li>Kwon et al. <em>Generalizable Human Gaussians.</em> ECCV 2024.</li>
+        <li>Bulò, Porzi, Kontschieder. <em>Revising Densification.</em> ECCV 2024.</li>
+        <li>Bulò et al. <em>RayGS.</em> CVPR Highlight 2025.</li>
+        <li>Roessle et al. <em>L3DG.</em> SIGGRAPH Asia 2024.</li>
+        <li>Liu, Höllein, Nießner, Dai. <em>QuickSplat.</em> ICCV 2025.</li>
+        <li>Sarafianos et al. <em>WorldGen.</em> arXiv 2511.16825.</li>
+        <li>Wu et al. <em>ReconFusion.</em> CVPR 2024.</li>
+        <li>Sayman, Toplutas, Tunick, Aras. <sup>99m</sup>Tc-Vitamin C SPECT/CT. Nucl. Med. Rev. 25(2), 2022.</li>
       </ol>
     </div>
 
-    <div class="ft-meta">
-      <div class="ft-contact">
-        <h3>Contact + code</h3>
-        <ul>
-          <li><span class="mono">paper</span> imclab.github.io/portals-cvpr2026</li>
-          <li><span class="mono">studio</span> h3m.ai</li>
-          <li><span class="mono">contact</span> JTunick@TheIMCLab.com</li>
-        </ul>
-      </div>
-      <div class="ft-acks">
-        <h3>Acknowledgements</h3>
-        <p>NIH/NCI Cancer Center Support Grant P30 CA008748 (COVIDvis component); Magic Leap; Memorial Sloan Kettering; Apple Vision Pro dev program; the open-source 3DGS community. The authors thank Dr. Omer Aras (MSK) and Dr. Haluk B. Sayman (Istanbul University) for clinical collaboration.</p>
-      </div>
-      <div class="ft-orgs">
-        <img src="../static/images/ieee_cs.svg" alt="IEEE Computer Society">
-        <img src="../static/images/cvf_logo.svg" alt="Computer Vision Foundation">
+    <div class="col-meta">
+      <div class="bh"><span class="bn bn-sm">·</span><h2>Contact · acknowledgements</h2></div>
+      <p class="cb"><span class="ck">paper</span> imclab.github.io/portals-cvpr2026 &nbsp;·&nbsp; <span class="ck">studio</span> h3m.ai &nbsp;·&nbsp; <span class="ck">contact</span> JTunick@TheIMCLab.com</p>
+      <p class="acks">Supported in part by NIH/NCI Cancer Center Support Grant <span class="m">P30 CA008748</span> (COVIDvis component). Magic Leap · Memorial Sloan Kettering · Apple Vision Pro developer program. Thanks to Dr. Omer Aras (MSK) + Dr. Haluk B. Sayman (Istanbul U.) for clinical collaboration, and to the open-source 3DGS community.</p>
+      <div class="orgs">
+        <img src="../static/images/cvpr_denver_lockup.png" alt="CVPR Denver 2026">
+        <img src="../static/images/ieee_cs.svg" alt="IEEE CS">
+        <img src="../static/images/cvf_logo.svg" alt="CVF">
         <img src="../static/images/h3m_logo.png" alt="H3M">
       </div>
     </div>
