@@ -92,23 +92,14 @@ html, body {
   filter: drop-shadow(0 0 24px var(--accent-glow));
   flex-shrink: 0;
 }
-.logo-h3m {
-  font-weight: 900;
-  font-size: 140px;
-  letter-spacing: -0.055em;
-  line-height: 1;
-  color: var(--fg);
-}
-.logo-h3m::after {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-left: 10px;
-  box-shadow: 0 0 30px var(--accent-glow);
-  vertical-align: middle;
+.logo-h3m-img {
+  height: 150px;
+  width: auto;
+  /* Brand royal-blue on black: lift saturation, add Iris-glow halo for visibility */
+  filter:
+    brightness(1.35)
+    saturate(1.2)
+    drop-shadow(0 0 18px var(--accent-glow));
 }
 .logo-imc {
   font-family: var(--mono);
