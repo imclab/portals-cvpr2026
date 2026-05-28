@@ -323,11 +323,86 @@ html, body {
 .bay .fig img {
   max-height: 460px;
 }
-.b-creator .fig-bleed img { border: none; max-height: 440px; object-fit: cover; object-position: center 30%; }
-.b-pipe .fig img { max-height: 440px; }
-.b-meta .fig img { max-height: 440px; object-fit: cover; }
+/* Row 2 — bigger figures so creator moment carries */
+.b-creator .fig-bleed img { border: 1px solid var(--ink); max-height: 760px; object-fit: cover; object-position: center 28%; }
+.b-pipe .fig img { max-height: 600px; }
+.b-meta .fig img { max-height: 580px; object-fit: contain; }   /* show full Keijiro quadrant layout */
 
 .bay { overflow: hidden; }
+
+/* ── ROW-2 INLINE FILL CONTENT ─────────────────────────────────────── */
+/* §04 — 4 authoring surfaces below hero composer */
+.surfaces {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 16px;
+  padding-top: 8px;
+  border-top: 2px solid var(--ink);
+}
+.surfaces li {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  display: flex; align-items: center; gap: 8px;
+}
+.sf-i {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  background: var(--pull); color: var(--paper);
+  font-size: 14px; font-weight: 700;
+  font-family: var(--display);
+  border-radius: 2px;
+}
+
+/* §05 — inline data callouts under content pipeline diagram */
+.inline-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 2px solid var(--ink);
+}
+.is { display: grid; gap: 2px; padding-left: 12px; border-left: 3px solid var(--pull); }
+.is-n {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+.is-l {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* §06 — 5-property contract chips */
+.props-chips {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding-top: 8px;
+  border-top: 2px solid var(--ink);
+}
+.props-chips li {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-align: center;
+  padding: 6px 2px;
+  background: var(--pull-soft);
+  border: 1px solid var(--pull);
+}
 
 /* ── VOICE WEDGE BAND — full-width editorial pull-quote ─────────────── */
 .vband {

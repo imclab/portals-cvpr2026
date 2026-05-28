@@ -141,14 +141,27 @@
     <article class="bay b-creator"><div class="bh"><span class="bn">04</span><h2>Creator interfaces</h2></div>
       <p class="sub">Three steps: photo → upload → publish. Four authoring surfaces lower to one persistent scene graph.</p>
       <figure class="fig fig-bleed"><img src="../static/images/hero_composer.jpg" alt=""><figcaption><span class="fct">FIG&nbsp;2</span> Real iPhone 14 Pro captures. TL: brush + scene authoring · TR: VFX composition (Glitch · Bubbles · Trails · HumanCube) · BL: voice command parsed + executed locally · BR: direct manipulation with depth-driven effects.</figcaption></figure>
+      <ul class="surfaces">
+        <li><span class="sf-i">✱</span> BRUSH&nbsp;·&nbsp;HOLOGRAM&nbsp;·&nbsp;HI-FI</li>
+        <li><span class="sf-i">⏵</span> VFX&nbsp;COMPOSITION</li>
+        <li><span class="sf-i">◈</span> VOICE&nbsp;INTENT</li>
+        <li><span class="sf-i">⊕</span> DIRECT&nbsp;MANIPULATION</li>
+      </ul>
     </article>
 
     <article class="bay b-pipe"><div class="bh"><span class="bn">05</span><h2>Content pipeline</h2></div>
       <figure class="fig"><img src="../static/images/content-pipeline.png" alt=""><figcaption><span class="fct">FIG&nbsp;3</span> Three pathways — Gaussian capture · photogrammetry · AI generation — normalize into a Spatial Scene Graph (SSG) that the LOD Manager + VFX Pipeline render and persist. Latent Gaussian generation [L3DG, Roessle 2024] is identified as future work.</figcaption></figure>
+      <div class="inline-stats">
+        <div class="is"><span class="is-n">≤5000:1</span><span class="is-l">XRAI manifest compression vs raw scene payload</span></div>
+        <div class="is"><span class="is-n">.splat · SPZ</span><span class="is-l">portable interchange · cross-tool authoring</span></div>
+      </div>
     </article>
 
     <article class="bay b-meta"><div class="bh"><span class="bn">06</span><h2>Spatial-media substrate</h2></div>
       <figure class="fig"><img src="../static/images/metavido_uvmux.png" alt=""><figcaption><span class="fct">FIG&nbsp;4</span> UV-multiplexed spatial-video frame. Color RGB right · hue-encoded depth top-left · human stencil R-channel bottom-left · metadata barcode B-channel (12 floats/frame). Same 5-property contract works on live AR and decoded video — record · edit · replay. After Keijiro Takahashi, <em>MetavidoVFX</em>.</figcaption></figure>
+      <ul class="props-chips">
+        <li>ColorMap</li><li>DepthMap</li><li>RayParams</li><li>InverseView</li><li>DepthRange</li>
+      </ul>
     </article>
 
   </section>
