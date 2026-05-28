@@ -2,11 +2,60 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portals — CVPR 2026 Workshop Poster v7</title>
+<script>
+  // Auto-fit 8400×4200 sheet to any browser viewport.
+  // Keeps 1:1 print fidelity — only the on-screen view scales.
+  function fitPoster() {
+    var p = document.getElementById('poster');
+    if (!p) return;
+    var sx = window.innerWidth  / 8400;
+    var sy = window.innerHeight / 4200;
+    var s  = Math.min(sx, sy) * 0.98; // 2% padding
+    p.style.transform = 'scale(' + s + ')';
+    p.style.transformOrigin = 'top left';
+    var w = 8400 * s, h = 4200 * s;
+    p.style.marginLeft = ((window.innerWidth  - w) / 2) + 'px';
+    p.style.marginTop  = ((window.innerHeight - h) / 2) + 'px';
+  }
+  window.addEventListener('load',   fitPoster);
+  window.addEventListener('resize', fitPoster);
+  // Click toggles 100% (actual size) vs fit
+  document.addEventListener('DOMContentLoaded', function () {
+    var actual = false;
+    document.getElementById('zoom-toggle').addEventListener('click', function (e) {
+      e.preventDefault();
+      actual = !actual;
+      var p = document.getElementById('poster');
+      if (actual) {
+        p.style.transform = 'none';
+        p.style.marginLeft = '0';
+        p.style.marginTop  = '0';
+        document.body.style.overflow = 'auto';
+        this.textContent = 'Fit to window';
+      } else {
+        document.body.style.overflow = 'hidden';
+        fitPoster();
+        this.textContent = 'View 100% (8400×4200)';
+      }
+    });
+  });
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="poster.css">
 </head>
 <body>
+
+<div class="topbar">
+  <span class="topbar-title">Portals · CVPR 2026 4D World Models workshop poster</span>
+  <a href="#" id="zoom-toggle" class="topbar-btn">View 100% (8400×4200)</a>
+  <a href="../" class="topbar-btn">← Project page</a>
+</div>
+
+<div class="portrait-hint">
+  Rotate device to landscape for best view (poster is 84×42″).
+</div>
 
 <main class="poster" id="poster">
 
