@@ -1,0 +1,599 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Portals CVPR 2026 Poster v6
+   84" × 42" landscape · 100 ppi · 8400 × 4200 px
+   Aesthetic: industrial-utilitarian × editorial
+   Brand: --bg #000 + --accent #F7FFA8 (Iris glow) + Satoshi / JetBrains Mono
+   Print: render in Chrome at 100% zoom + browser-print to PDF, A0 landscape.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* canonical brand */
+  --bg:            #000000;
+  --surf:          #0c0c0c;
+  --surf-hi:       #161616;
+  --fg:            #FFFFFF;
+  --fg-dim:        #C8C8C8;
+  --muted:         #6a6a6a;
+  --hair:          rgba(255,255,255,0.10);
+  --hair-strong:   rgba(255,255,255,0.22);
+  --accent:        #F7FFA8;
+  --accent-glow:   rgba(247,255,168,0.35);
+  --accent-soft:   rgba(247,255,168,0.10);
+  --secondary:     #A8A8FF;
+
+  /* semantic color callouts (sparingly) */
+  --warn:          #FFCC00;
+  --edge:          #e74c3c;
+
+  /* type */
+  --display: "Satoshi", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* poster scale — 1:1 with print units */
+  --W: 8400px;
+  --H: 4200px;
+  --pad: 96px;
+  --gap: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #2a2a2a; /* gutter outside poster */
+  color: var(--fg);
+  font-family: var(--display);
+  font-feature-settings: "ss01", "ss02", "kern";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* ── POSTER SHEET ──────────────────────────────────────────────────────── */
+.poster {
+  width: var(--W);
+  height: var(--H);
+  background: var(--bg);
+  color: var(--fg);
+  margin: 40px auto;
+  padding: var(--pad);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--gap);
+  position: relative;
+  overflow: hidden;
+  /* subtle radial scrim — adds depth, doesn't compete */
+  background-image:
+    radial-gradient(ellipse 60% 40% at 20% 10%, var(--accent-soft), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 90% 95%, rgba(168,168,255,0.06), transparent 70%);
+}
+
+/* hairline frame — subtle "this is a designed object" cue */
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: 48px;
+  border: 1px solid var(--hair);
+  pointer-events: none;
+}
+
+/* ── TOP STRIP ─────────────────────────────────────────────────────────── */
+.top-strip { display: grid; grid-template-rows: auto auto auto auto; gap: 28px; }
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--hair-strong);
+}
+.logos { display: flex; align-items: baseline; gap: 64px; }
+.logo-h3m {
+  font-weight: 900;
+  font-size: 140px;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  color: var(--fg);
+}
+.logo-h3m::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 10px;
+  box-shadow: 0 0 30px var(--accent-glow);
+  vertical-align: middle;
+}
+.logo-imc {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--fg-dim);
+}
+.conf-badge { text-align: right; font-family: var(--mono); }
+.badge-line { display: block; font-size: 36px; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
+.badge-workshop { display: block; font-size: 22px; color: var(--fg-dim); margin-top: 8px; letter-spacing: 0.04em; }
+
+.title { display: grid; gap: 16px; }
+.title-main {
+  font-size: 320px;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  color: var(--fg);
+}
+.title-main::after {
+  content: ".";
+  color: var(--accent);
+  text-shadow: 0 0 60px var(--accent-glow);
+}
+.title-sub {
+  font-size: 92px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  color: var(--fg-dim);
+  max-width: 80%;
+}
+.thesis {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--fg);
+  max-width: 75%;
+}
+.thesis em { color: var(--accent); font-style: normal; font-weight: 700; }
+
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 28px;
+  color: var(--fg-dim);
+  border-top: 1px solid var(--hair);
+  padding-top: 24px;
+}
+.author { color: var(--fg); font-weight: 500; }
+.aff { color: var(--muted); margin-left: auto; }
+
+/* ── HERO NUMERICS BAND ────────────────────────────────────────────────── */
+.hero-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  padding: 48px 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.hero-stat {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  padding-left: 32px;
+  border-left: 4px solid var(--accent);
+}
+.hero-stat .num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 280px;
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  color: var(--fg);
+  text-shadow: 0 0 80px rgba(255,255,255,0.10);
+}
+.hero-stat .num .suffix {
+  color: var(--accent);
+  font-size: 0.55em;
+  letter-spacing: -0.04em;
+}
+.hero-stat .lbl {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--fg-dim);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+/* ── BODY GRID — 4 COLUMNS ─────────────────────────────────────────────── */
+.body-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+.col {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 24px;
+  padding-top: 8px;
+  border-top: 1px solid var(--hair-strong);
+}
+
+.sec-num {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+}
+.sec-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+}
+.lede {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.32;
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+.lede em { color: var(--accent); font-style: normal; }
+.col p {
+  font-size: 24px;
+  line-height: 1.46;
+  color: var(--fg-dim);
+}
+
+/* GOAL pull-quote (CUT3R steal) */
+.goal {
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--fg);
+  padding: 24px 28px;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+}
+.goal em { color: var(--accent); font-style: normal; font-weight: 700; }
+.goal-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+.use-cases {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding-top: 8px;
+}
+.use-cases li {
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--fg-dim);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* CONTRACT diagram (the unique-strength piece) */
+.contract {
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+  background: var(--surf);
+  border: 1px solid var(--hair);
+}
+.contract-input, .contract-shader, .contract-output {
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--fg);
+  padding: 14px 18px;
+  background: var(--surf-hi);
+  border: 1px solid var(--hair);
+  text-align: center;
+}
+.contract-shader { color: var(--accent); border-color: var(--accent-soft); }
+.contract-arrow {
+  text-align: center;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 28px;
+}
+.contract-props {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.prop {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+  padding: 12px 8px;
+  text-align: center;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  letter-spacing: 0.02em;
+}
+.contract-output { background: transparent; color: var(--accent); border-color: var(--accent); }
+
+/* Performance tables */
+.perf {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 22px;
+}
+.perf caption {
+  font-size: 18px;
+  color: var(--muted);
+  text-align: left;
+  padding-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.perf th, .perf td {
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--hair);
+  text-align: left;
+  color: var(--fg-dim);
+}
+.perf th {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.perf td strong { color: var(--accent); }
+
+/* Schema list */
+.schema { display: grid; gap: 12px; padding: 20px; background: var(--surf); border: 1px solid var(--hair); }
+.schema-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: baseline;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 22px;
+}
+.schema-k { color: var(--accent); font-weight: 700; letter-spacing: 0.04em; }
+.schema-v { color: var(--fg-dim); }
+
+.note {
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--muted);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+/* Creator column */
+.col-creator { grid-column: span 1; }
+.screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.shot {
+  display: grid;
+  gap: 8px;
+}
+.shot .ph {
+  aspect-ratio: 9 / 16;
+  background: linear-gradient(135deg, var(--surf-hi), var(--surf));
+  border: 1px solid var(--hair);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.shot figcaption {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--fg-dim);
+  letter-spacing: 0.02em;
+}
+
+/* MetavidoVFX UV-mux quadrant */
+.metavido {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: var(--surf);
+  border: 1px solid var(--hair);
+}
+.metavido h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  aspect-ratio: 16 / 9;
+  gap: 2px;
+  background: var(--hair-strong);
+  border: 1px solid var(--hair-strong);
+}
+.q {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-align: center;
+}
+.q small { font-weight: 400; font-size: 12px; opacity: 0.7; letter-spacing: 0.05em; text-transform: none; }
+.q-color   { background: rgba(255,255,255,0.18); grid-column: 2; grid-row: 1 / span 2; }
+.q-depth   { background: linear-gradient(135deg, #00d9ff33, #ff00aa33); }
+.q-stencil { background: rgba(231,76,60,0.30); }
+.q-meta    { background: rgba(52,152,219,0.30); position: absolute; }
+
+/* ── BOTTOM STRIP ──────────────────────────────────────────────────────── */
+.bottom-strip {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.1fr 1.2fr 1fr;
+  gap: var(--gap);
+  padding-top: 32px;
+  border-top: 1px solid var(--hair-strong);
+}
+
+.bottom-strip h3 {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.axes ol {
+  list-style: none;
+  counter-reset: axisc;
+  display: grid;
+  gap: 14px;
+}
+.axes li {
+  counter-increment: axisc;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--fg-dim);
+  padding-left: 56px;
+  position: relative;
+}
+.axes li::before {
+  content: counter(axisc, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.axes strong { color: var(--fg); }
+
+/* Limitations callout (GenFusion red TL;DR steal — tuned for our palette) */
+.limits {
+  padding: 24px 24px 24px 28px;
+  background: var(--surf);
+  border-left: 4px solid var(--edge);
+}
+.limits h3 { color: var(--edge); }
+.limits h3 em { color: var(--edge); font-style: normal; }
+.limits ul { list-style: none; display: grid; gap: 10px; }
+.limits li {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--fg-dim);
+  padding-left: 22px;
+  position: relative;
+}
+.limits li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--edge);
+  font-weight: 700;
+}
+
+/* QR strip */
+.qr-strip { display: grid; gap: 24px; }
+.qr {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.qr-box {
+  width: 200px; height: 200px;
+  background: var(--fg);
+  padding: 8px;             /* white quiet zone — QR ECC-H needs ≥4 modules */
+  image-rendering: pixelated;
+  display: block;
+}
+.qr figcaption {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.3;
+}
+.qr-url {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+/* References */
+.refs ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.refs li {
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--fg-dim);
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 6px;
+}
+.refs em { color: var(--muted); font-style: italic; }
+
+/* Contact */
+.contact { display: grid; gap: 12px; align-content: start; }
+.contact-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 20px;
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 8px;
+}
+.contact .ck { color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 16px; }
+.contact .cv { color: var(--accent); font-weight: 500; }
+.acks {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-top: 12px;
+}
+
+/* ── PRINT ─────────────────────────────────────────────────────────────── */
+@page {
+  size: 84in 42in;
+  margin: 0;
+}
+@media print {
+  html, body { background: var(--bg); }
+  .poster { margin: 0; transform-origin: top left; }
+}
+
+/* ── PREVIEW (browser zoom-out helper) ─────────────────────────────────── */
+@media screen and (max-width: 9000px) {
+  /* zoom CSS can be added per-viewport — kept neutral here */
+}
