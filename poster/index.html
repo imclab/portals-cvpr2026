@@ -26,7 +26,7 @@
       </div>
     </div>
     <h1 class="title">
-      <span class="title-main">Portals</span>
+      <span class="title-main"><img class="title-glyph" src="../static/images/portals-glyph.svg" alt="">Portals</span>
       <span class="title-sub">Persistent, Editable 4D Spatial World Models on Edge Devices</span>
     </h1>
     <p class="thesis">From <em>stateless scenes</em> to <em>stateful worlds</em> — running on the phone in your pocket.</p>
@@ -161,16 +161,10 @@
         <figcaption>Brush · environment VFX library · jARvis voice response · body-stencil depth-driven effects</figcaption>
       </figure>
 
-      <div class="metavido">
-        <h4>Spatial-video record · edit · replay</h4>
-        <div class="quad">
-          <div class="q q-color">color RGB<br><small>right half</small></div>
-          <div class="q q-depth">depth<br><small>hue-encoded · TL</small></div>
-          <div class="q q-stencil">stencil R<br><small>BL</small></div>
-          <div class="q q-meta">meta B<br><small>12 floats / frame</small></div>
-        </div>
-        <p class="note">UV-multiplexed 1920×1080 · H.264/HEVC · same 5-property contract on live + recorded.</p>
-      </div>
+      <figure class="diagram metavido">
+        <img src="../static/images/metavido_uvmux.png" alt="MetavidoVFX UV-multiplexed spatial-video frame · color right, depth top-left, stencil bottom-left, metadata barcode B-channel">
+        <figcaption><strong>Spatial-video record · edit · replay</strong> · UV-mux 1920×1080 · H.264/HEVC · color RGB right half · hue-encoded depth TL · human stencil R-channel BL · metadata barcode B-channel BL (12 floats/frame) · same 5-property contract for live + recorded. After <a href="https://github.com/keijiro/MetavidoVFX">Keijiro Takahashi · MetavidoVFX</a>.</figcaption>
+      </figure>
     </article>
 
   </section>
