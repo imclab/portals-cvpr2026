@@ -108,9 +108,16 @@ html, body {
   letter-spacing: 0.18em;
   color: var(--fg-dim);
 }
-.conf-badge { text-align: right; font-family: var(--mono); }
-.badge-line { display: block; font-size: 36px; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
-.badge-workshop { display: block; font-size: 22px; color: var(--fg-dim); margin-top: 8px; letter-spacing: 0.04em; }
+.conf-badge { text-align: right; font-family: var(--mono); display: grid; gap: 12px; justify-items: end; }
+.cvpr-lockup {
+  width: 480px;
+  height: auto;
+  background: var(--fg);
+  padding: 14px 20px;
+  border: 1px solid var(--hair-strong);
+  display: block;
+}
+.badge-workshop { display: block; font-size: 22px; color: var(--fg-dim); letter-spacing: 0.04em; max-width: 480px; }
 
 .title { display: grid; gap: 16px; }
 .title-main {
@@ -551,6 +558,19 @@ html, body {
 }
 .contact .ck { color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 16px; }
 .contact .cv { color: var(--accent); font-weight: 500; }
+.org-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--hair);
+}
+.org-mark {
+  height: 56px;
+  width: auto;
+  filter: invert(1) brightness(1.0);
+  opacity: 0.85;
+}
 .acks {
   font-size: 14px;
   line-height: 1.5;
