@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://api.fontshare.com/v2/css?f[]=fraunces@900,700,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F5F1E8;--tint:#ECE5D2;--ink:#0E0E0E;--soft:#2A2825;--muted:#7A766E;--hair:#C9C3B4;
+        --pull:#6B0F1A;--pullsoft:#F0DEDC;--gold:#B89968;
+        --disp:"Fraunces",Georgia,serif;--sans:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);width:4800px}
+  .sheet{padding:0}
+  .fig{width:4800px;height:1180px;background:var(--paper);position:relative;padding:70px 96px 60px;overflow:hidden}
+  .fig+.fig{border-top:6px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:.28em;color:var(--pull);text-transform:uppercase}
+  .htitle{font-family:var(--disp);font-weight:900;font-size:104px;line-height:.92;letter-spacing:-.02em;color:var(--ink);margin:10px 0 4px}
+  .htitle em{font-style:italic;color:var(--pull)}
+  .hsub{font-family:var(--disp);font-style:italic;font-weight:500;font-size:42px;color:var(--soft);margin-bottom:6px}
+  svg{display:block}
+  .cap{position:absolute;left:96px;bottom:46px;font-family:var(--mono);font-size:27px;letter-spacing:.02em;color:var(--muted)}
+  .cap b{color:var(--ink);font-weight:600}.cap .xr{color:var(--pull);font-weight:600}
+  .backnav{position:fixed;top:14px;left:16px;z-index:99;font-family:var(--mono);font-size:13px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:1px solid var(--ink);
+    padding:7px 12px;text-decoration:none}
+  .backnav:hover{background:var(--ink);color:var(--paper)}
+</style></head><body><a href="index.html" class="backnav">← Back to poster</a><div class="sheet">
+
+<!-- ════ VISUAL 1 · EVOLUTION LINEAGE ════ -->
+<section class="fig">
+  <div class="eyebrow">The evolution · one frozen image becomes a living, shared world</div>
+  <h1 class="htitle">From a photograph to a <em>world.</em></h1>
+  <svg width="4608" height="560" viewBox="0 0 4608 560" style="margin-top:14px">
+    <defs>
+      <radialGradient id="nerf" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6B0F1A" stop-opacity=".55"/><stop offset="100%" stop-color="#6B0F1A" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="growth" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#C9C3B4"/><stop offset="55%" stop-color="#B89968"/><stop offset="100%" stop-color="#6B0F1A"/>
+      </linearGradient>
+    </defs>
+    <!-- growth spine: thin left → thick oxblood right -->
+    <path d="M150,470 C1500,470 3100,470 4470,470" fill="none" stroke="url(#growth)"
+          stroke-width="8" stroke-linecap="round"/>
+    <path d="M150,470 C1500,468 3100,462 4470,452" fill="none" stroke="url(#growth)" stroke-opacity=".0"/>
+    <!-- thickening underline that swells toward XRAI -->
+    <path d="M150,470 C1500,470 3100,470 4470,470 L4470,470 C3100,470 1500,470 150,470 Z" fill="none"/>
+    <g font-family="IBM Plex Mono" font-size="34" font-weight="600" text-anchor="middle">
+      <!-- 1 photograph: single flat frame -->
+      <g transform="translate(360,250)">
+        <rect x="-62" y="-62" width="124" height="124" fill="none" stroke="#0E0E0E" stroke-width="6"/>
+        <line x1="-62" y1="-20" x2="62" y2="-20" stroke="#C9C3B4" stroke-width="4"/>
+        <text x="0" y="150" fill="#0E0E0E">photograph</text>
+        <text x="0" y="196" fill="#7A766E" font-size="27" font-weight="500">one flat frame</text>
+      </g>
+      <!-- 2 NeRF: soft radiance cloud -->
+      <g transform="translate(1182,250)">
+        <circle cx="0" cy="0" r="80" fill="url(#nerf)"/>
+        <circle cx="0" cy="0" r="80" fill="none" stroke="#6B0F1A" stroke-width="3" stroke-opacity=".4" stroke-dasharray="6 10"/>
+        <text x="0" y="150" fill="#0E0E0E">NeRF</text>
+        <text x="0" y="196" fill="#7A766E" font-size="27" font-weight="500">a radiance field</text>
+      </g>
+      <!-- 3 3D splats: scattered gaussians forming a shape -->
+      <g transform="translate(2004,250)">
+        <g fill="#0E0E0E">
+          <ellipse cx="-46" cy="-30" rx="22" ry="14" opacity=".85" transform="rotate(-20 -46 -30)"/>
+          <ellipse cx="8" cy="-46" rx="26" ry="15" opacity=".9" transform="rotate(15 8 -46)"/>
+          <ellipse cx="44" cy="-8" rx="20" ry="13" opacity=".8" transform="rotate(40 44 -8)"/>
+          <ellipse cx="-20" cy="20" rx="28" ry="16" opacity=".95" transform="rotate(-8 -20 20)"/>
+          <ellipse cx="30" cy="34" rx="22" ry="14" opacity=".75" transform="rotate(25 30 34)"/>
+          <ellipse cx="-52" cy="40" rx="18" ry="12" opacity=".7" transform="rotate(50 -52 40)"/>
+        </g>
+        <text x="0" y="150" fill="#0E0E0E">3D splats</text>
+        <text x="0" y="196" fill="#7A766E" font-size="27" font-weight="500">gaussian geometry</text>
+      </g>
+      <!-- 4 4D splats: same + motion/time arcs -->
+      <g transform="translate(2826,250)">
+        <g fill="#0E0E0E">
+          <ellipse cx="-40" cy="-26" rx="22" ry="14" opacity=".85" transform="rotate(-20 -40 -26)"/>
+          <ellipse cx="10" cy="-44" rx="26" ry="15" opacity=".9" transform="rotate(15 10 -44)"/>
+          <ellipse cx="44" cy="-6" rx="20" ry="13" opacity=".8" transform="rotate(40 44 -6)"/>
+          <ellipse cx="-16" cy="22" rx="28" ry="16" opacity=".95" transform="rotate(-8 -16 22)"/>
+          <ellipse cx="34" cy="34" rx="22" ry="14" opacity=".75" transform="rotate(25 34 34)"/>
+        </g>
+        <path d="M-86,-66 A120,120 0 0,1 92,-58" fill="none" stroke="#B89968" stroke-width="5" marker-end="url(#ah)"/>
+        <path d="M-92,70 A120,120 0 0,0 88,74" fill="none" stroke="#B89968" stroke-width="5" marker-end="url(#ah)"/>
+        <text x="0" y="150" fill="#0E0E0E">4D splats</text>
+        <text x="0" y="196" fill="#7A766E" font-size="27" font-weight="500">geometry + time</text>
+      </g>
+      <!-- 5 spatial substrate: structured layered world -->
+      <g transform="translate(3648,250)">
+        <g stroke="#0E0E0E" stroke-width="5" fill="none">
+          <path d="M-66,-40 L66,-40 L96,-8 L-36,-8 Z" fill="#ECE5D2"/>
+          <path d="M-66,2 L66,2 L96,34 L-36,34 Z" fill="#F0DEDC"/>
+          <path d="M-66,44 L66,44 L96,76 L-36,76 Z" fill="#ECE5D2"/>
+        </g>
+        <text x="0" y="150" fill="#0E0E0E">spatial substrate</text>
+        <text x="0" y="196" fill="#7A766E" font-size="27" font-weight="500">L0–L3 layers</text>
+      </g>
+      <!-- 6 XRAI: the open, provenanced world (HOT) -->
+      <g transform="translate(4360,250)">
+        <circle cx="0" cy="0" r="96" fill="#6B0F1A" opacity=".12"/>
+        <g stroke="#6B0F1A" stroke-width="6" fill="none">
+          <path d="M-58,-36 L58,-36 L84,-8 L-32,-8 Z" fill="#F0DEDC"/>
+          <path d="M-58,4 L58,4 L84,32 L-32,32 Z" fill="#6B0F1A" fill-opacity=".18"/>
+          <path d="M-58,44 L58,44 L84,72 L-32,72 Z" fill="#F0DEDC"/>
+        </g>
+        <circle cx="0" cy="0" r="96" fill="none" stroke="#6B0F1A" stroke-width="4"/>
+        <text x="0" y="158" fill="#6B0F1A" font-weight="600">XRAI</text>
+        <text x="0" y="204" fill="#6B0F1A" font-size="27" font-weight="500">open · persistent · shared</text>
+      </g>
+    </g>
+    <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+      <path d="M0,0 L8,5 L0,10 Z" fill="#B89968"/></marker></defs>
+  </svg>
+  <p class="cap"><b>photograph</b> → <b>NeRF</b> → <b>3D&nbsp;splats</b> → <b>4D&nbsp;splats</b> → <b>spatial&nbsp;substrate</b> → <span class="xr">XRAI</span> &nbsp;·&nbsp; a frozen image, one step at a time, becomes a living, shared, open world.</p>
+</section>
+
+<!-- ════ VISUAL 2 · THE WAVE (megatrend convergence) ════ -->
+<section class="fig">
+  <div class="eyebrow">The megatrend · one paradigm, converging</div>
+  <h1 class="htitle">THE WAVE.</h1>
+  <div class="hsub">Six currents merging into the open spatial web.</div>
+  <svg width="4608" height="600" viewBox="0 0 4608 600" style="margin-top:6px">
+    <defs>
+      <linearGradient id="crest" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#B89968" stop-opacity=".25"/>
+        <stop offset="70%" stop-color="#6B0F1A" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#6B0F1A" stop-opacity=".9"/>
+      </linearGradient>
+    </defs>
+    <!-- six currents flowing left, bending to converge at the crest -->
+    <g fill="none" stroke-width="9" stroke-linecap="round" font-family="IBM Plex Mono">
+      <path d="M70,70   C1400,70  2600,260 3560,300" stroke="#0E0E0E" opacity=".82"/>
+      <path d="M70,170  C1400,170 2600,280 3560,300" stroke="#0E0E0E" opacity=".82"/>
+      <path d="M70,270  C1400,270 2600,295 3560,300" stroke="#0E0E0E" opacity=".82"/>
+      <path d="M70,370  C1400,370 2600,310 3560,300" stroke="#0E0E0E" opacity=".82"/>
+      <path d="M70,470  C1400,470 2600,330 3560,300" stroke="#6B0F1A" opacity=".9"/>
+      <path d="M70,570  C1400,570 2600,360 3560,300" stroke="#6B0F1A" opacity=".9"/>
+    </g>
+    <!-- the cresting wave on the right -->
+    <path d="M3560,300 C3760,120 3980,70 4180,150 C4040,150 3980,250 4060,300
+             C4180,250 4320,250 4470,330 C4360,300 4260,360 4320,440
+             C4180,420 4040,420 3920,470 C3760,500 3620,440 3560,300 Z"
+          fill="url(#crest)" stroke="#6B0F1A" stroke-width="6"/>
+    <path d="M3560,300 C3700,180 3900,150 4060,210" fill="none" stroke="#6B0F1A" stroke-width="7" stroke-linecap="round"/>
+    <!-- current labels -->
+    <g font-family="IBM Plex Sans" font-size="40" font-weight="600" fill="#0E0E0E">
+      <text x="92" y="58">Mixed Reality</text>
+      <text x="92" y="158">AI Agents</text>
+      <text x="92" y="258">Open Source</text>
+      <text x="92" y="358">Multimodal Models</text>
+      <text x="92" y="458" fill="#6B0F1A">World Models</text>
+      <text x="92" y="558" fill="#6B0F1A">X-ray Provenance</text>
+    </g>
+    <!-- crest label -->
+    <g text-anchor="middle">
+      <text x="4060" y="300" font-family="Fraunces" font-weight="900" font-size="62" fill="#6B0F1A">open</text>
+      <text x="4060" y="372" font-family="Fraunces" font-weight="900" font-size="62" fill="#6B0F1A">spatial web</text>
+    </g>
+  </svg>
+  <p class="cap"><b>mixed reality</b> × <b>AI agents</b> × <b>open source</b> × <b>multimodal</b> + <b>world models</b> × <span class="xr">x-ray provenance</span> &nbsp;=&nbsp; the open spatial web. Anyone authors → every scene carries provenance → creations become open training data.</p>
+</section>
+
+</div></body></html>
