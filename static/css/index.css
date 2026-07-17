@@ -159,6 +159,36 @@ body {
   .visual-grid-duo {
     grid-template-columns: 1fr;
   }
+  /* Prevent hero title + button rows from forcing horizontal scroll on phones. */
+  .publication-title {
+    font-size: 1.9rem !important;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  .publication-links .link-block { margin: 0; }
+  .project-meta-links { flex-wrap: wrap; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  /* Bulma .columns negative margins + wide children force page width on phones. */
+  .columns { margin-left: 0 !important; margin-right: 0 !important; }
+  .container, .container.is-max-desktop { max-width: 100% !important; }
+  .hero-body { padding-left: 1rem !important; padding-right: 1rem !important; }
+  /* Long unbreakable content (BibTeX) must wrap, not force width. */
+  #bibtex pre { white-space: pre-wrap; word-break: break-word; }
+  /* Wide tables must scroll inside their own container, never force page width. */
+  #xrai table.wide { min-width: 0 !important; }
+  .aperture-perception .ap-scroll { max-width: 100%; }
+  .aperture-perception { padding-left: 0.6rem; padding-right: 0.6rem; }
+  /* Fixed layout so matrix cells wrap instead of setting a min-content page-width floor. */
+  .aperture-perception table, #xrai table { table-layout: fixed; width: 100%; }
+  .aperture-perception th, .aperture-perception td { overflow-wrap: anywhere; word-break: break-word; }
+  #xrai .ap-code { max-width: 100%; }
 }
 
 .visual-card {
