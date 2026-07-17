@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="canonical" href="https://h3m.ai/portals-cvpr2026">
+  <link rel="icon" href="/favicon.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
@@ -54,7 +56,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" download="Portals_CVPR2026_Workshop_Paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <a href="static/pdfs/ReGen4D-14-portals_4d_world_models_cvpr2026.pdf" download="ReGen4D-14-portals_4d_world_models_cvpr2026.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                     <span>Paper (PDF)</span>
                   </a>
@@ -65,17 +67,18 @@
                     <span>Contact</span>
                   </a>
                 </span>
+                <!-- TODO: arXiv ID after submission -->
                 <span class="link-block">
-                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                  <a href="https://portals-rgbd-viewer.vercel.app" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-globe"></i></span>
-                    <span>Web Demo Coming Soon</span>
-                  </span>
+                    <span>Web Demo</span>
+                  </a>
                 </span>
                 <span class="link-block">
-                  <span class="external-link button is-normal is-rounded is-dark is-disabled">
+                  <a href="https://github.com/imclab/portals_v4" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code Coming Soon</span>
-                  </span>
+                    <span>Code</span>
+                  </a>
                 </span>
                 <span class="link-block">
                   <a href="#supplemental-video" class="external-link button is-normal is-rounded is-dark">
@@ -118,13 +121,19 @@
     </div>
   </section>
 
-  <section class="hero teaser">
+  <section id="supplemental-video" class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/portals-banner.png" alt="Portals system architecture overview" class="teaser-image">
+        <video class="teaser-image" autoplay muted loop playsinline controls preload="auto"
+               poster="static/images/portals-banner.png"
+               style="width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+          <source src="static/videos/portals_cvpr2026_supp.mp4" type="video/mp4">
+          Your browser does not support HTML5 video. <a href="static/videos/portals_cvpr2026_supp.mp4">Download the video</a>.
+        </video>
         <h2 class="subtitle has-text-centered">
           Persistent, editable 4D spatial world models for mobile devices, built with edge-device rendering constraints as a first-class requirement.
         </h2>
+        <p class="figure-caption" style="margin-top:0.5rem;">Selected footage captured on device (iPhone 14 Pro, iPad Pro, Apple Vision Pro). <a href="static/videos/portals_cvpr2026_supp.mp4" download>Download MP4</a>.</p>
       </div>
     </div>
   </section>
@@ -144,18 +153,17 @@
     </div>
   </section>
 
-  <section id="supplemental-video" class="section">
+  <section id="bibtex" class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Supplemental Video</h2>
-          <div class="content has-text-centered">
-            <video controls playsinline preload="metadata" style="width:100%;max-width:960px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
-              <source src="static/videos/portals_cvpr2026_supp.mp4" type="video/mp4">
-              Your browser does not support HTML5 video. <a href="static/videos/portals_cvpr2026_supp.mp4">Download the video</a>.
-            </video>
-            <p class="figure-caption" style="margin-top:0.75rem;">Selected footage captured on device (iPhone 15 Pro, iPad Pro, Apple Vision Pro). <a href="static/videos/portals_cvpr2026_supp.mp4" download>Download MP4</a>.</p>
-          </div>
+          <h2 class="title is-3 has-text-centered">BibTeX</h2>
+          <pre><code>@inproceedings{portals2026,
+  title={Portals: Persistent, Editable 4D Spatial World Models on Edge Devices},
+  author={Tunick, James A. and Brant, Ryan and Pennock, Jacob D. and Kasowski, Justin},
+  booktitle={CVPR 2026 Workshop on 4D World Models: Bridging Generation and Reconstruction},
+  year={2026}
+}</code></pre>
         </div>
       </div>
     </div>
@@ -196,7 +204,7 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Device Captures</h2>
-          <p class="has-text-centered" style="margin-bottom:1.5rem;color:#666;">All imagery captured on physical devices &mdash; iPhone 15 Pro, iPad Pro, and Apple Vision Pro.</p>
+          <p class="has-text-centered" style="margin-bottom:1.5rem;color:#666;">All imagery captured on physical devices &mdash; iPhone 14 Pro, iPad Pro, and Apple Vision Pro.</p>
           <div class="visual-grid visual-grid-secondary">
             <figure class="visual-card">
               <img src="static/images/hero_composer.jpg" alt="Voice composer with AR VFX and voice command overlay" class="paper-figure">
@@ -278,7 +286,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="static/pdfs/portals_cvpr2026_workshop_paper.pdf" download="Portals_CVPR2026_Workshop_Paper.pdf">
+        <a class="icon-link" href="static/pdfs/ReGen4D-14-portals_4d_world_models_cvpr2026.pdf" download="ReGen4D-14-portals_4d_world_models_cvpr2026.pdf">
           <i class="fas fa-file-pdf"></i>
         </a>
       </div>
