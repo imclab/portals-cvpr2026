@@ -280,12 +280,27 @@
             </figure>
           </div>
           <div class="visual-grid visual-grid-secondary" style="margin-top:1rem;">
-            <figure class="visual-card">
-              <img src="static/images/facial-emotion-scanning.png" alt="On-device face-mesh scanning reading ARKit blendshape coefficients" class="paper-figure">
+            <figure class="visual-card ml-tile">
+              <div class="ml-frame">
+                <img src="static/images/facial-emotion-scanning.png" alt="On-device face-mesh scanning reading ARKit blendshape coefficients" class="paper-figure">
+                <span class="ml-scan-sweep" aria-hidden="true"></span>
+                <div class="ml-hud ml-hud--scan" aria-hidden="true">
+                  <div class="ml-status"><span class="ml-dot"></span><span class="ml-verdict">SCANNING</span><span class="ml-meta">ARKit &middot; 52 coeffs &middot; 60 fps</span></div>
+                  <div class="ml-row"><span class="ml-k">mouthSmileL</span><span class="ml-bar"><i style="--v:10%"></i></span><span class="ml-v">0.10</span></div>
+                  <div class="ml-row"><span class="ml-k">jawOpen</span><span class="ml-bar"><i style="--v:4%"></i></span><span class="ml-v">0.04</span></div>
+                </div>
+              </div>
               <figcaption class="figure-caption">Real-time face-mesh scanning &mdash; the on-device ML expression channel reading live ARKit blendshape coefficients.</figcaption>
             </figure>
-            <figure class="visual-card">
-              <img src="static/images/facial-emotion-smile-detected.png" alt="ML facial-expression channel detecting a smile at 0.76 confidence" class="paper-figure">
+            <figure class="visual-card ml-tile">
+              <div class="ml-frame">
+                <img src="static/images/facial-emotion-smile-detected.png" alt="ML facial-expression channel detecting a smile at 0.76 confidence" class="paper-figure">
+                <div class="ml-hud ml-hud--hit" aria-hidden="true">
+                  <div class="ml-status"><span class="ml-dot"></span><span class="ml-verdict">SMILE DETECTED</span><span class="ml-meta">conf 0.76</span></div>
+                  <div class="ml-row"><span class="ml-k">mouthSmileL</span><span class="ml-bar"><i style="--v:77%"></i></span><span class="ml-v">0.77</span></div>
+                  <div class="ml-row"><span class="ml-k">mouthSmileR</span><span class="ml-bar"><i style="--v:74%"></i></span><span class="ml-v">0.74</span></div>
+                </div>
+              </div>
               <figcaption class="figure-caption">Contextual affect awareness &mdash; the same ML channel flags a detected smile (confidence 0.76), driving expression-reactive effects.</figcaption>
             </figure>
             <figure class="visual-card">
@@ -372,6 +387,49 @@
     @media (max-width:720px){.aperture-perception{padding:1.6rem .7rem}.aperture-perception h2{font-size:1.3rem}
       .aperture-perception table{font-size:.74rem}.aperture-perception td.cap{white-space:normal}
       .aperture-perception thead th.c{width:70px}}
+  </style>
+
+  <style>
+    /* On-device ML inference readout — overlays the two facial-expression tiles.
+       Palette + faces borrowed from the Aperture perception section so the HUD
+       reads as the page's own telemetry. Bar width encodes the live ARKit
+       blendshape coefficient; the two tiles show a scanning -> detected pair. */
+    .ml-tile{--hz:#1FD1C6;--bloom:#FF2E88;--ash:#C6C0D8;--cap:#EDEAF6;--dim:#8A84A0}
+    .ml-frame{position:relative;display:block;line-height:0;border-radius:10px;overflow:hidden}
+    .ml-frame .paper-figure{border-radius:0;display:block}
+    .ml-hud{position:absolute;left:.5rem;right:.5rem;bottom:.5rem;max-width:16.5rem;
+      padding:.5rem .6rem .55rem;border-radius:8px;line-height:1.25;text-align:left;pointer-events:none;
+      background:linear-gradient(180deg,rgba(12,10,30,.60),rgba(12,10,30,.82));
+      -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+      border:1px solid rgba(31,209,198,.30);box-shadow:0 6px 20px rgba(0,0,0,.38);
+      font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ash)}
+    .ml-status{display:flex;align-items:center;gap:.4rem;margin-bottom:.42rem}
+    .ml-dot{width:.5rem;height:.5rem;border-radius:50%;flex:0 0 auto}
+    .ml-verdict{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;
+      font-size:.72rem;letter-spacing:.055em;color:var(--cap)}
+    .ml-meta{margin-left:auto;font-size:.55rem;letter-spacing:.02em;color:var(--dim);white-space:nowrap}
+    .ml-row{display:grid;grid-template-columns:5.4rem 1fr 2.1rem;align-items:center;gap:.45rem;margin-top:.2rem}
+    .ml-k{font-size:.6rem;color:var(--ash);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .ml-v{font-size:.62rem;text-align:right;color:var(--cap);font-variant-numeric:tabular-nums}
+    .ml-bar{position:relative;height:.34rem;border-radius:2px;background:rgba(198,192,216,.16);overflow:hidden}
+    .ml-bar>i{position:absolute;inset:0 auto 0 0;width:var(--v);border-radius:2px;
+      background:linear-gradient(90deg,rgba(31,209,198,.55),var(--hz));
+      animation:mlfill .9s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes mlfill{from{width:0}to{width:var(--v)}}
+    .ml-hud--hit .ml-dot{background:var(--hz);box-shadow:0 0 6px rgba(31,209,198,.9)}
+    .ml-hud--scan{border-color:rgba(255,46,136,.34)}
+    .ml-hud--scan .ml-dot{background:var(--bloom);box-shadow:0 0 6px rgba(255,46,136,.9)}
+    .ml-hud--scan .ml-bar>i{background:linear-gradient(90deg,rgba(138,132,160,.4),rgba(198,192,216,.7))}
+    .ml-scan-sweep{position:absolute;left:0;right:0;top:0;height:2px;pointer-events:none;
+      background:linear-gradient(90deg,transparent,rgba(31,209,198,.85),transparent);
+      animation:mlsweep 2.6s linear infinite}
+    @keyframes mlsweep{0%{top:6%;opacity:0}12%{opacity:.9}88%{opacity:.9}100%{top:94%;opacity:0}}
+    @media (max-width:720px){
+      .ml-hud{max-width:none;padding:.4rem .45rem}
+      .ml-verdict{font-size:.62rem}.ml-meta{display:none}
+      .ml-row{grid-template-columns:4.6rem 1fr 1.9rem}}
+    @media (prefers-reduced-motion:reduce){
+      .ml-bar>i{animation:none;width:var(--v)}.ml-scan-sweep{display:none}}
   </style>
   <div class="ap-wrap">
     <h2>Perception &amp; Contextual Awareness</h2>
