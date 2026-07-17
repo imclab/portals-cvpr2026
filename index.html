@@ -400,6 +400,205 @@
   </div>
   </section>
 
+  <!-- ══ XRAI Platform Capabilities — Aperture identity · reuses .aperture-perception styles ══ -->
+  <section class="section aperture-perception" id="xrai">
+  <style>
+    #xrai .ap-code{background:#0A0820;border:1px solid var(--edge);border-radius:10px;padding:1rem 1.1rem;
+      overflow-x:auto;font-size:.72rem;line-height:1.55;color:#BFE9E2;margin:0 auto 1.3rem;max-width:820px;
+      font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+    #xrai .ap-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    #xrai .ap-examples{max-width:920px;margin:.6rem auto 0;font-size:.8rem;line-height:1.65;color:var(--ash);padding-left:0;list-style:none}
+    #xrai .ap-examples li{margin:.4rem 0;padding-left:.2rem}
+    #xrai .ap-examples b{color:var(--white);font-family:'Space Grotesk',system-ui,sans-serif}
+    #xrai .ap-examples .il{color:var(--dim);font-style:italic}
+    #xrai .star{color:var(--bloom);font-weight:700}
+    #xrai .rank{color:var(--horizon);font-weight:700}
+    #xrai table.wide{min-width:640px}
+    #xrai td.pick{color:var(--cap);font-size:.76rem;text-align:center;white-space:nowrap}
+  </style>
+  <div class="ap-wrap">
+    <h2>XRAI Platform Capabilities</h2>
+    <p class="ap-sub">the interchange format that makes a world portable</p>
+
+    <div class="flywheel">🧬 <b>XRAI is the DNA of a Portal</b> — one portable document carries a scene's structure, intent, provenance &amp; edit history and renders on any engine. <span class="em">Store the generation process, not just the output.</span><span class="loop">Portals &middot; XRAI &middot; jARvis</span></div>
+
+    <pre class="ap-code">{
+  "xrai_version": "1.0",
+  "id": "…0001",
+  "author": {"type": "human", "id": "example"},
+  "origin": {"app": "example", "version": "1.0", "scene": "minimal"},
+  "scene": {
+    "anchors": [],
+    "entities": [
+      {"id": "cube_1", "type": "object.primitive",
+       "transform": {"position": [0, 0.25, -1.5], "rotation": [0,0,0,1], "scale": [0.2,0.2,0.2]},
+       "material": {"color": "cyan", "preset": "neon"}}
+    ],
+    "relations": [], "events": []
+  }
+}</pre>
+
+    <div class="ap-group">📦 File format &amp; interchange</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">📄</span>Portable scene manifest, geometry out-of-line</td><td class="use">Tiny revisit traffic — structure travels, payloads stream on demand</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">💾</span>Persistent + editable world state</td><td class="use">Save, re-open, mutate &amp; re-version worlds across sessions, devices &amp; users</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🧾</span>Edit-history + per-object provenance</td><td class="use">Replay creator intent; track source, license, generator, timestamps</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧩</span>Multi-asset typed container</td><td class="use">One manifest routes primitive / splat / hologram / portal nodes to the right renderer</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔀</span>Cross-runtime portability</td><td class="use">One <code>.xrai</code> decodes on many renderers via an open schema</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">⏳</span>Temporal validity windows</td><td class="use">Content that appears only during an event, or on a schedule</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧬</span>Generative encoding — "store the rules, not the mesh" <span class="lk">🔒</span></td><td class="use">A compact seed / rules expand into a full world</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🧊 3D / 4D / nD formats</div>
+    <table>
+      <thead><tr><th>Format</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">✨</span>Gaussian splats (<code>.splat</code> / <code>.ply</code> / SPZ)</td><td class="use">Photoreal captured environments; web-light delivery</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">📦</span>glTF 2.0 / GLB (runtime baseline)</td><td class="use">Universal asset payload every runtime reads</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🍎</span>USD / USDZ interop</td><td class="use">Compose with the Apple / DCC ecosystem</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎞️</span>Volumetric video (depth + color) <span class="lk">🔒</span></td><td class="use">Records a hologram into a standard video texture — streams over ordinary codecs</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧍</span>Mesh + avatar interchange (FBX ↔ GLB, VRM)</td><td class="use">Photogrammetry meshes, humanoid avatars with expressions</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">☁️</span>Point-cloud formats (PLY / E57 / LAS)</td><td class="use">Scan data into the same scene graph</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🔗</span><code>KHR_gaussian_splatting</code> interop</td><td class="use">Ride the emerging cross-platform splat standard</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🕸️ Semantic &amp; ontological</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🗂️</span>Spatial Scene Graph (SSG)</td><td class="use">Hierarchy of (geometry, geo-anchor, time-window, LOD) — the core representation</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🔵</span>Entity / relation / event / anchor model</td><td class="use">Id-stable entities and relations that survive edits</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">⚡</span>Typed relations with runtime meaning</td><td class="use"><code>reacts-to-audio</code>, <code>tracks</code>, <code>parent-of</code> — behavior, not just hierarchy</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🗣️</span>Natural-language → scene-graph operations</td><td class="use">Voice edits and direct manipulation hit the same structured ops</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🏷️</span>AR scene understanding &amp; semantic labels</td><td class="use">Floors, walls, tables, faces, bodies typed with confidence</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧭</span>Faceted ontology (multi-axis)</td><td class="use">Identity, time, scale, modality, provenance… as first-class axes</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🧠 Knowledgebase &amp; knowledge graph</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🔌</span>Encode-anything → graph</td><td class="use">Turn a webpage, repo, paper, or calendar into an XRAI graph</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🕸️</span>Knowledge graph → spatial world</td><td class="use">Nodes become objects/rooms, edges become portals, clusters become districts</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🌐</span>3D force-graph visualization</td><td class="use">Explore relationships as a live, navigable 3D graph</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔭</span>Semantic-zoom navigation</td><td class="use">One continuous zoom from universe → district → artifact</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧷</span>Persistent cross-session memory</td><td class="use">Worlds and knowledge compound instead of resetting</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">✨ Generative &amp; procedural</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🖼️</span>Text / image → 3D asset</td><td class="use">Prompt an object or room-scale asset in seconds</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">📷</span>AI-assisted reconstruction</td><td class="use">Publishable splats from a ~20-second phone video</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🌱</span>Procedural world generation</td><td class="use">Voice → procedural environments from seed + rules</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎙️</span>Voice / no-code authoring loop</td><td class="use">On-device intent parsing (sub-ms) with cloud fallback; every path emits the same ops</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🎨</span>Whole-scene neural style transfer</td><td class="use">"Make everything look like ___" across the live scene</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧑‍🎤</span>Avatar generation</td><td class="use">Person → avatar / volumetric double</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🌌 VFX &amp; holograms</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🎆</span>360+ source-agnostic real-time VFX</td><td class="use">Console-grade effects at 60 fps on a phone</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧱</span>Shared compute substrate <span class="lk">🔒</span></td><td class="use">Depth → world / stencil / velocity computed once; each effect adds only render cost</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎚️</span>Multi-channel effect binding</td><td class="use">Depth + stencil + audio + pose auto-resolved across effect conventions</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🫧</span>Body-driven / stencil-masked VFX</td><td class="use">Sparks, embers, trails that hug a live person</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎥</span>Live + recorded holographic media</td><td class="use">Record → edit → replay; effects work on live and decoded alike</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🛰️</span>Live hologram room (browser ↔ iOS)</td><td class="use">Share a live hologram across app and browser</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">⚙️ Render pipelines</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">⚛️</span>LOD-adaptive Gaussian splatting (SPAG)</td><td class="use">Panoramic image → editable 3D Gaussians; four-tier LOD (2.7–4.1× speedup)</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎛️</span>Adaptive quality controller</td><td class="use">Live FPS + thermal tuning holds the 16.7 ms frame budget</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">📱</span>Mobile-first / edge rendering</td><td class="use">60 fps iPhone 14 Pro · 57 fps Galaxy S23 — no cloud required</td><td class="c">🟢</td><td class="c">—</td></tr>
+        <tr><td class="cap"><span class="ico">🔺</span>Mesh / PBR pipeline</td><td class="use">Standard glTF / URP path for classic assets</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🌐</span>WebGL / WebGPU web rendering</td><td class="use">Graph + scene viewers in the browser</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🧩</span>Multi-runtime adapters</td><td class="use">One document, many engines (Three.js + Unity locked; others in progress)</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🔬 Splat techniques &amp; pipelines <span class="lk">how they rank &middot; ★ our pick</span></div>
+    <div class="ap-scroll"><table class="wide">
+      <thead><tr><th>Technique / format</th><th>Best at</th><th class="c">Mobile</th><th class="c">Editable</th><th class="c">LOD</th><th class="c">Web-light</th><th class="c">Our call</th></tr></thead>
+      <tbody>
+        <tr><td class="cap">3D Gaussian Splatting (3DGS)</td><td class="use">Photoreal captured scenes</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="pick">baseline</td></tr>
+        <tr><td class="cap"><b>SPAG</b> — Spherical Pixel-Aligned Gaussians</td><td class="use">Panorama → editable splats · LOD · O(1) edit</td><td class="c">🟢</td><td class="c">🟢</td><td class="c">🟢</td><td class="c">🟡</td><td class="pick"><span class="star">★</span> mobile</td></tr>
+        <tr><td class="cap">4D / animated splats (DynGsplat)</td><td class="use">Moving / temporal splats</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="pick">in test</td></tr>
+        <tr><td class="cap">Human Gaussians (GHG)</td><td class="use">Feed-forward volumetric avatars</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">🟡</td><td class="pick">roadmap</td></tr>
+        <tr><td class="cap">Latent 3DGS (generative)</td><td class="use">Fully-synthetic props from a prompt</td><td class="c">🟡</td><td class="c">🟡</td><td class="c">—</td><td class="c">🟡</td><td class="pick">research</td></tr>
+        <tr><td class="cap">Photogrammetry mesh</td><td class="use">Static hero objects</td><td class="c">🟢</td><td class="c">🟢</td><td class="c">🟢</td><td class="c">🟢</td><td class="pick">classic</td></tr>
+        <tr><td class="cap"><code>.splat</code> / <code>.ply</code></td><td class="use">Universal splat containers</td><td class="c">🟢</td><td class="c">—</td><td class="c">—</td><td class="c">🟡</td><td class="pick"><span class="star">★</span> interchange</td></tr>
+        <tr><td class="cap">SPZ</td><td class="use">~10× smaller splats for the web</td><td class="c">🟡</td><td class="c">—</td><td class="c">—</td><td class="c">🟢</td><td class="pick"><span class="star">★</span> web</td></tr>
+        <tr><td class="cap"><code>KHR_gaussian_splatting</code></td><td class="use">Emerging cross-platform standard</td><td class="c">🟡</td><td class="c">—</td><td class="c">—</td><td class="c">🟡</td><td class="pick">adopt on ratify</td></tr>
+      </tbody>
+    </table></div>
+    <div class="ap-scroll"><table>
+      <thead><tr><th>Render pipeline — one <code>.xrai</code> → many engines</th><th>Surface</th><th class="c">Status</th><th class="c">Rank</th></tr></thead>
+      <tbody>
+        <tr><td class="cap">Unity gsplat</td><td class="use">iOS / mobile</td><td class="c">🟢</td><td class="pick"><span class="star">★</span> mobile</td></tr>
+        <tr><td class="cap">Three.js</td><td class="use">Web (reference)</td><td class="c">🟢</td><td class="pick"><span class="star">★</span> web</td></tr>
+        <tr><td class="cap">PlayCanvas / SuperSplat</td><td class="use">Web</td><td class="c">🟡</td><td class="pick"><span class="rank">2</span></td></tr>
+        <tr><td class="cap">Needle (WebXR)</td><td class="use">Web XR</td><td class="c">🟡</td><td class="pick"><span class="rank">3</span></td></tr>
+        <tr><td class="cap">Icosa</td><td class="use">Web</td><td class="c">🟡</td><td class="pick">in test</td></tr>
+        <tr><td class="cap">RealityKit</td><td class="use">visionOS (native)</td><td class="c">🟡</td><td class="pick">planned</td></tr>
+        <tr><td class="cap">Unreal</td><td class="use">PC / console</td><td class="c">🟡</td><td class="pick">planned</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="ap-group">📊 Data-viz &amp; X-ray observability</div>
+    <table>
+      <thead><tr><th>Capability</th><th>What it's for</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🩻</span>Glanceable system X-ray</td><td class="use">Every stage as status · timing · why — see a pipeline before you read it</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧾</span>Provenance / lineage per action</td><td class="use">Cost, model, and source trace behind every generated thing</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">📈</span>3D data visualization</td><td class="use">Large graphs and datasets rendered in WebGPU</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔍</span>See-through / see-across transparency</td><td class="use">Inspect how a world was built and how its parts relate</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">📱 Devices &amp; platforms</div>
+    <table>
+      <thead><tr><th>Platform</th><th>What runs there</th><th class="c">Native</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">📱</span>iPhone (iOS)</td><td class="use">Flagship: 360+ VFX @ 60 fps, full runtime, voice + gesture authoring</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🤖</span>Android (Galaxy S23)</td><td class="use">Render-verified at 57 fps</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🥽</span>Apple Vision Pro</td><td class="use">Web viewer for environments, volumetric humans &amp; holographic media</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🌐</span>Web / browser</td><td class="use">Encode / decode, graph viewer + editor, voice → scene</td><td class="c">—</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">👓</span>AR headsets / smart glasses</td><td class="use">Target surface; glasses-HUD experiences designed</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🧠</span>Edge devices (no-cloud)</td><td class="use">Stateful worlds that live on the device — the runtime, not a thin client</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🎬</span>LED / XR production stage</td><td class="use">Proven in live-event &amp; virtual-production deployments</td><td class="c">🟢</td><td class="c">—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">📎 Grounded examples <span class="lk">real shipped fixtures / deployments unless noted</span></div>
+    <ul class="ap-examples">
+      <li>💾 <b>Persistent world + temporal window</b> — a geolocated Portal that reloads across sessions &amp; devices via worldmap relocalization; e.g. a Portal visible only during a concert <span class="il">(temporal window — illustrative)</span>.</li>
+      <li>🕸️ <b>Knowledgebase + graph</b> — a real Wikipedia article encoded → walkable node/relation graph; the site renders the XRAI spec as its own hypergraph.</li>
+      <li>🌱 <b>Generative / procedural</b> — <span class="il">"a mystical forest with floating lights"</span> → sparse seed <code>424242</code> expands to a procedural canopy + 120 drifting particle lights + volumetric fog on the floor plane.</li>
+      <li>🌌 <b>VFX / holograms</b> — body-stencil VFX on a live person (ARKit occlusion → VFX Graph); a shared live hologram room over RGB+D + LiveKit <span class="il">(in progress)</span>.</li>
+      <li>⚛️ <b>Render / splat</b> — a panorama → Spherical Pixel-Aligned Gaussians, O(1) per-splat edit, four-tier LOD → 360+ VFX at 60 fps on iPhone 14 Pro.</li>
+      <li>📱 <b>Devices</b> — deployed iPhone 14 Pro (60 fps) · iPhone 12 (48 fps) · Galaxy S23 (57 fps) · web viewer on Apple Vision Pro · prior clinical volumetric AR on Magic Leap 1.</li>
+    </ul>
+
+    <p class="ap-legend"><span>🟢</span> shipped / demonstrated <span>🟡</span> in progress <span>🔒</span> capability level <span>★</span> our pick</p>
+    <p class="ap-note">One portable format, every renderer. Statuses are conservative — Web means the encode/decode + viewer surface, not the full mobile VFX stack. 🔒 items are shown at capability level only.</p>
+  </div>
+  </section>
+
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
