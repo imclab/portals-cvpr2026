@@ -134,7 +134,8 @@ body {
 }
 
 .visual-hero .paper-figure {
-  padding: 0.65rem;
+  padding: 0;
+  width: 100%;
 }
 
 .visual-grid-secondary {
@@ -145,9 +146,18 @@ body {
   margin: 0;
 }
 
+/* Uniform tiles: every device-capture crops to the same 4:3 frame,
+   so mixed source aspect ratios (portrait + landscape) still align. */
 .visual-card .paper-figure {
-  height: 100%;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  padding: 0;
+  background: #0d0d10;
+}
+
+.visual-card .figure-caption {
+  padding: 0 0.15rem;
 }
 
 
@@ -165,7 +175,13 @@ body {
   font-size: 1.02rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+  .visual-grid-secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 640px) {
   .visual-grid-secondary {
     grid-template-columns: 1fr;
   }
