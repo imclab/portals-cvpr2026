@@ -142,6 +142,25 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* Last two highlights grow to fill the full page width as a 2-up row,
+   shown at natural aspect (no crop) so the composite frames read fully. */
+.visual-grid-duo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.visual-highlights .visual-grid-duo .paper-figure {
+  aspect-ratio: auto;
+  object-fit: contain;
+  height: auto;
+  padding: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .visual-grid-duo {
+    grid-template-columns: 1fr;
+  }
+}
+
 .visual-card {
   margin: 0;
 }
