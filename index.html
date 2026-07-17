@@ -19,6 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portals: Persistent, Editable 4D Spatial World Models on Edge Devices</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -268,6 +270,111 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ══ Perception & Contextual Awareness — Aperture identity · self-contained ══ -->
+  <section class="section aperture-perception" id="perception">
+  <style>
+    .aperture-perception{--void:#0C0A1E;--panel:#151036;--edge:#2C2560;--dim:#8A84A0;
+      --bloom:#FF2E88;--aura:#7A5CFF;--horizon:#1FD1C6;--white:#fff;--cap:#EDEAF6;--ash:#C6C0D8;
+      background:var(--void);border-radius:16px;padding:2.4rem 1.2rem;
+      font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ash)}
+    .aperture-perception .ap-wrap{max-width:1040px;margin:0 auto}
+    .aperture-perception h2{color:var(--white);text-align:center;margin:0 0 .3rem;
+      font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;letter-spacing:.04em;font-size:1.7rem}
+    .aperture-perception .ap-sub{color:var(--bloom);text-align:center;font-size:.82rem;margin:0 0 1.4rem}
+    .aperture-perception .flywheel{position:relative;margin:0 auto 1.9rem;max-width:820px;
+      padding:1.1rem 1.4rem;border-radius:12px;color:#F3F0FA;font-size:.92rem;line-height:1.5;text-align:center;
+      background:linear-gradient(180deg,rgba(122,92,255,.14),rgba(255,46,136,.08));border:1px solid transparent;background-clip:padding-box}
+    .aperture-perception .flywheel::before{content:"";position:absolute;inset:0;border-radius:12px;padding:1px;
+      background:linear-gradient(120deg,var(--aura),var(--bloom),var(--horizon));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .aperture-perception .flywheel b{color:var(--white);font-family:'Space Grotesk',system-ui,sans-serif}
+    .aperture-perception .flywheel .em{color:var(--horizon)}
+    .aperture-perception .flywheel .loop{display:block;margin-top:.7rem;color:var(--bloom);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+    .aperture-perception .ap-group{display:flex;align-items:center;gap:.55rem;margin:1.7rem 0 .5rem;color:var(--white);
+      font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:.98rem;border-left:3px solid var(--bloom);padding-left:.6rem}
+    .aperture-perception .ap-group .lk{color:var(--aura);font-size:.7rem;font-family:inherit;margin-left:.2rem;font-weight:400}
+    .aperture-perception table{width:100%;border-collapse:collapse;font-size:.82rem}
+    .aperture-perception thead th{color:var(--ash);font-weight:500;text-transform:uppercase;letter-spacing:.05em;
+      font-size:.64rem;padding:.35rem .6rem;text-align:left;border-bottom:1px solid var(--edge)}
+    .aperture-perception thead th.c{text-align:center;width:96px}
+    .aperture-perception tbody td{padding:.5rem .6rem;border-bottom:1px solid rgba(44,37,96,.55);vertical-align:middle}
+    .aperture-perception td.cap{color:var(--cap);white-space:nowrap}
+    .aperture-perception td.use{color:var(--ash);font-size:.78rem}
+    .aperture-perception td.c{text-align:center;font-size:.92rem}
+    .aperture-perception tbody tr:hover td{background:rgba(122,92,255,.08)}
+    .aperture-perception .ico{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;
+      margin-right:.55rem;border-radius:7px;background:rgba(122,92,255,.10);border:1px solid var(--edge);font-size:14px;line-height:1;vertical-align:middle}
+    .aperture-perception .ap-legend{margin-top:1.8rem;text-align:center;font-size:.76rem;color:var(--ash)}
+    .aperture-perception .ap-legend span{margin:0 .35rem 0 1rem}
+    .aperture-perception .ap-note{margin:.7rem auto 0;max-width:680px;text-align:center;color:var(--dim);font-size:.68rem;font-style:italic}
+    @media (max-width:720px){.aperture-perception{padding:1.6rem .7rem}.aperture-perception h2{font-size:1.3rem}
+      .aperture-perception table{font-size:.74rem}.aperture-perception td.cap{white-space:normal}
+      .aperture-perception thead th.c{width:70px}}
+  </style>
+  <div class="ap-wrap">
+    <h2>Perception &amp; Contextual Awareness</h2>
+    <p class="ap-sub">what the system sees, measures, and anticipates — on device</p>
+
+    <div class="flywheel">🌀 Each capability stands on its own. <b>Combined, they form the intelligent substrate</b> — <span class="em">contextual awareness greater than the sum of its parts</span> that learns, self-corrects, and improves with every use.<span class="loop">perceive &rarr; understand &rarr; act &rarr; learn &#8635;</span></div>
+
+    <div class="ap-group">🏃 Motion, body &amp; trajectory</div>
+    <table>
+      <thead><tr><th>Capability</th><th>Most-valuable use case</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🎯</span>Trajectory &amp; projectile detection</td><td class="use">Ball-flight &amp; shot tracing from a phone — no radar</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">⚡</span>Real-world speed from video</td><td class="use">Swing &amp; body speed from a single camera</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🦴</span>Full-body 3D pose &amp; skeleton</td><td class="use">Form &amp; technique coaching; live avatar drive</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">✋</span>Per-body-part keypoints</td><td class="use">Fine motion (wrist/club) metrics; gesture control</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🚶</span>Gait &amp; motion-form analysis</td><td class="use">Session-over-session tempo &amp; plane deltas</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">👥</span>Multi-object tracking</td><td class="use">People &amp; props tracked for interaction</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🗺️ Scene &amp; spatial understanding</div>
+    <table>
+      <thead><tr><th>Capability</th><th>Most-valuable use case</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">📏</span>Metric depth sensing</td><td class="use">True-scale placement &amp; measurement</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">✂️</span>People occlusion &amp; matting</td><td class="use">People walk in front of portals; clean cutouts</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🏷️</span>Scene mesh + semantic labeling</td><td class="use">Content reacts to floors, walls, objects</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🟦</span>Surface / plane detection</td><td class="use">Snap &amp; anchor content to real surfaces</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🏠</span>Room-layout understanding</td><td class="use">Instant scene scaffolds from a room scan</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🪟</span>Glass / window de-occlusion</td><td class="use">Portals stay visible through glass</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">📍</span>World-locked geo-anchoring</td><td class="use">City-scale, GPS-locked persistent portals</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🔎</span>Object &amp; image recognition</td><td class="use">Marker &amp; product-triggered experiences</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔤</span>Text, code &amp; saliency reading</td><td class="use">Read signage; attention-aware overlays</td><td class="c">🟢</td><td class="c">🟡</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🧠 Contextual awareness &amp; prediction <span class="lk">🔒 capability level</span></div>
+    <table>
+      <thead><tr><th>Capability</th><th>Most-valuable use case</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🧭</span>User-intent inference</td><td class="use">The right tool surfaces before you ask</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔮</span>Needs prediction &amp; anticipation</td><td class="use">Anticipates your next step</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">📊</span>Behavior modeling</td><td class="use">Personalizes to how you move &amp; create</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">😊</span>Affect &amp; expression sensing</td><td class="use">Empathetic response to mood &amp; expression</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">📈</span>Trajectory prediction</td><td class="use">Predicts where the ball or person is heading</td><td class="c">🟡</td><td class="c">🟡</td></tr>
+        <tr><td class="cap"><span class="ico">🕸️</span>Relationship mapping</td><td class="use">Maps how people, objects &amp; spaces relate to each other</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ap-group">🤖 Multimodal intelligence — Jarvis loop <span class="lk">🔒 capability level</span></div>
+    <table>
+      <thead><tr><th>Capability</th><th>Most-valuable use case</th><th class="c">Mobile / Headset</th><th class="c">Web</th></tr></thead>
+      <tbody>
+        <tr><td class="cap"><span class="ico">🗣️</span>Voice + vision understanding</td><td class="use">Ask about what you're looking at, hands-free</td><td class="c">🟢</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">👉</span>Open-vocabulary &ldquo;point &amp; ask&rdquo;</td><td class="use">Point at anything, get an answer or action</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+        <tr><td class="cap"><span class="ico">🔁</span>Perceive &rarr; understand &rarr; act loop</td><td class="use">Sees, understands, and acts in one loop</td><td class="c">🟡</td><td class="c">🟢</td></tr>
+      </tbody>
+    </table>
+
+    <p class="ap-legend"><span>🟢</span> demonstrated <span>🟡</span> in progress <span>🔒</span> capability level</p>
+    <p class="ap-note">Status reflects current maturity per surface. Contextual and agentic capabilities are shown at capability level.</p>
+  </div>
   </section>
 
   <section class="section">
